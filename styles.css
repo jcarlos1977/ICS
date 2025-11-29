@@ -1,0 +1,245 @@
+:root {
+  --primary: #27ae60;
+  --dark: #2c3e50;
+  --light: #f5f6fa;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--light);
+  color: var(--dark);
+}
+
+/* HEADER */
+header {
+  background: var(--dark);
+  color: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+  animation: fadeIn 1.3s ease-in-out;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+}
+
+header p {
+  margin-top: .5rem;
+  font-size: 1.2rem;
+  opacity: .9;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  animation: slideUp 1.3s ease-in-out;
+}
+
+.hero h2 {
+  margin-bottom: .5rem;
+  font-size: 2rem;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 3000px;
+  margin: auto;
+}
+
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.12);
+  transition: transform .25s ease;
+  min-height: 800px;
+  padding-bottom: 2rem;
+  display: inline-block;
+  width: 700px;
+  height: auto;
+  margin: 10px;
+  padding: 15px;
+  border: 1px;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  max-height: 1850px;
+  object-fit: contain;
+}
+
+.card p {
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* CTA */
+.cta {
+  margin-top: 3rem;
+  padding: 4rem 1rem;
+  text-align: center;
+  background: var(--primary);
+  color: #fff;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta button {
+  background: #fff;
+  color: var(--primary);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.cta button:hover {
+  color: #fff;
+  background: var(--dark);
+}
+
+/* Animaciones */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  header h1 { font-size: 2.2rem; }
+  .cta h2 { font-size: 1.6rem; }
+}
+
+.step-title {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.step-desc {
+  font-size: 1rem;
+  color: #34495e;
+}
+
+.highlight {
+  color: #27ae60; /* Verde para resaltar */
+  font-weight: bold;
+}
+
+.error {
+  color: #e74c3c; /* Rojo para errores */
+  font-weight: bold;
+}
+
+.success {
+  color: #27ae60; /* Verde para éxito */
+  font-weight: bold;
+}
+
+.card.about {
+  max-width: 2000px;            /* ancho máximo para que no se extienda demasiado */
+  margin: 20px auto;           /* centrado con espacio alrededor */
+  padding: 20px;               /* espacio interno */
+  border: 1px solid #ccc;      /* borde suave */
+  border-radius: 10px;         /* esquinas redondeadas */
+  background: #fdfdfd;         /* fondo claro */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra ligera */
+}
+
+.card.about h2 {
+  font-size: 1.9rem;           /* título más grande */
+  color: #2c3e50;              /* gris oscuro elegante */
+  margin-bottom: 15px;
+  text-align: center;          /* centrado */
+}
+
+.card.about p {
+  font-size: 1rem;
+  line-height: 1.6;            /* mejor legibilidad */
+  color: #34495e;              /* tono gris azulado */
+  margin-bottom: 12px;
+}
+
+.card.about strong {
+  color: #27ae60;              /* verde para resaltar tu nombre */
+  font-weight: bold;
+}
+
+.card.about .highlight {
+  color: #2980b9;              /* azul para destacar conceptos clave */
+  font-weight: bold;
+  background-color: #ecf6fc;   /* fondo suave para resaltar */
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+#toggleAboutBtn {
+  background-color: #2980b9;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+#toggleAboutBtn:hover {
+  background-color: #1f6391;
+}
+
+.card.about {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fdfdfd;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card.about h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+.info {
+  color: #2980b9; /* Azul para datos */
+  font-weight: bold;
+}
+
+.success {
+  color: #27ae60; /* Verde para positivo */
+  font-weight: bold;
+}
+
+.error {
+  color: #e74c3c; /* Rojo para costos altos */
+  font-weight: bold;
+}
+
+.highlight {
+  color: #f39c12; /* Naranja para resaltar */
+  font-weight: bold;
+}
