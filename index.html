@@ -1,308 +1,325 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ICS</title>
-  <!-- Vinculamos el CSS externo -->
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <title>ICS – Inventory Control System | Sanchez Web Apps LLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+        content="ICS (Inventory Control System) by Sanchez Web Apps LLC: a modern, robust WMS for real warehouse operations." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- ======= Top Bar ======= -->
+  <header class="top-bar">
+    <div class="logo">
+      <div class="logo-mark">ICS</div>
+      <div class="logo-text">
+        <span>Inventory Control System</span>
+        <small>by Sanchez Web Apps LLC</small>
+      </div>
+    </div>
 
-  <header>
-    <h1>SANCHEZ WEP APPS LLC</h1>
-    <p>Easy and fast management for your business</p>
+    <div class="top-actions">
+      <div class="language-switcher">
+        <label for="languageSelect" data-i18n="langLabel">Language:</label>
+        <select id="languageSelect">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="zh">中文</option>
+        </select>
+      </div>
+      <a href="#contact" class="btn-outline" data-i18n="btnTopContact">Contact</a>
+    </div>
   </header>
 
-  <section class="hero">
-    <h2>Explore the main features</h2>
-    <p>👉 “Screenshots with clear explanations to understand how the system works”</p>
-    <button id="toggleAboutBtn" style="position: relative; left: 0px;">
-    👨‍💻 About the Developer
-    </button>
-  </section>
-  
-  <footer>
-    
-    <div class="card about" id="aboutSection" style="display:none;">
-      <h2>👨‍💻 About the Developer</h2>
-      <p><strong>Sanchez Web Apps LLC</strong> – Creator of this inventory system.</p>
-
-      <p>
-        This application was designed with a focus on 
-        <span class="highlight">data integrity</span>, 
-        <span class="highlight">user experience</span>, and 
-        <span class="highlight">bilingual accessibility</span>. 
-        Built using Firestore and Realtime Database, it ensures scalable, real-time inventory management.
+  <!-- ======= Hero Section ======= -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1 data-i18n="heroTitle">ICS – Inventory Control System</h1>
+      <p class="hero-subtitle" data-i18n="heroSubtitle">
+        A modern, robust and scalable WMS designed for real warehouse operations.
       </p>
-
-      <p>
-        My goal is to provide companies with a reliable tool that simplifies inventory workflows, 
-        prevents errors, and supports both English and Spanish users.
-      </p>
-
-      <h3>📖 Background & Design</h3>
-      <p>
-        This application was created after years of experience in the field, carefully studying the 
-        <span class="info">needs of companies</span>. It was designed to be a 
-        <span class="success">powerful yet affordable solution</span> for inventory control, ensuring 
-        <span class="highlight">real-time movements</span> and reliable data.
-      </p>
-
-      <h3>💰 Pricing & Licenses</h3>
-      <p>
-        While many companies charge up to <span class="error">$2,500 per user per year</span>, 
-        this application offers up to <span class="success">15 licenses</span> for only 
-        <span class="highlight">$400 per user</span>.  
-        This plan supports inventories with around <span class="info">5,000 products</span> and 
-        <span class="info">2,500 locations</span>.  
-        For larger inventories, a custom analysis can be provided.
-      </p>
-
-      <h3>🌍 Availability</h3>
-      <p>
-        Currently available in the counties of <span class="highlight">Riverside</span>, 
-        <span class="highlight">San Bernardino</span>, <span class="highlight">Orange</span>, 
-        <span class="highlight">Los Angeles</span>, and <span class="highlight">Ventura</span>.
-      </p>
-
-      <h3>📬 Contact</h3>
-      <p>
-        For more information, feel free to send me a text or email:<br>
-        📱 <span class="info">909‑450‑9292</span><br>
-        ✉️ <span class="info">elcomando@sanchezwebappsllc.com</span>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary" data-i18n="heroPrimaryCta">
+          Request a live demo
+        </a>
+        <a href="#modules" class="btn-secondary" data-i18n="heroSecondaryCta">
+          Explore modules
+        </a>
+      </div>
+      <p class="hero-note" data-i18n="heroNote">
+        Reduce errors, control your inventory and gain full traceability over every movement.
       </p>
     </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <h3 data-i18n="heroCardTitle">Real-time warehouse visibility</h3>
+        <ul>
+          <li data-i18n="heroCardItem1">Receiving with PO validation</li>
+          <li data-i18n="heroCardItem2">Advanced picking & replenishment</li>
+          <li data-i18n="heroCardItem3">History, web reports and dashboards</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Executive Summary ======= -->
+  <section class="section" id="summary">
+    <div class="section-header">
+      <h2 data-i18n="summaryTitle">Executive Summary</h2>
+      <p data-i18n="summaryIntro">
+        ICS is a Warehouse Management System designed for real operations, with intelligent flows, strict validations and complete traceability.
+      </p>
+    </div>
+    <div class="summary-grid">
+      <div class="summary-card">
+        <h3 data-i18n="summaryCard1Title">Optimized warehouse operations</h3>
+        <p data-i18n="summaryCard1Body">
+          From receiving to storage, internal transfers, consumption and picking, ICS guides the operator step by step to reduce errors and increase productivity.
+        </p>
+      </div>
+      <div class="summary-card">
+        <h3 data-i18n="summaryCard2Title">Reliable and auditable</h3>
+        <p data-i18n="summaryCard2Body">
+          Every movement is recorded with user, date, time, quantities and operation type, providing full traceability for audits and customer requirements.
+        </p>
+      </div>
+      <div class="summary-card">
+        <h3 data-i18n="summaryCard3Title">Modern UX</h3>
+        <p data-i18n="summaryCard3Body">
+          Tables that feel like Excel, draggable modals and clear error messages make training faster and adoption easier.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Modules ======= -->
+  <section class="section section-alt" id="modules">
+    <div class="section-header">
+      <h2 data-i18n="modulesTitle">Main Modules</h2>
+      <p data-i18n="modulesIntro">
+        ICS covers the complete warehouse lifecycle, from receiving POs to consumption and history analysis.
+      </p>
+    </div>
+
+    <div class="modules-grid">
+      <!-- Receiving -->
+      <article class="module-card">
+        <div class="module-icon">📥</div>
+        <h3 data-i18n="moduleReceivingTitle">Receiving (PO Controlled)</h3>
+        <ul>
+          <li data-i18n="moduleReceivingItem1">Open PO validation</li>
+          <li data-i18n="moduleReceivingItem2">Over-receiving prevention</li>
+          <li data-i18n="moduleReceivingItem3">Partial receipts management</li>
+          <li data-i18n="moduleReceivingItem4">Smart auto-fill and full history</li>
+        </ul>
+      </article>
+
+      <!-- Replenishment & Picking -->
+      <article class="module-card">
+        <div class="module-icon">🚚</div>
+        <h3 data-i18n="modulePickingTitle">Replenishment & Advanced Picking</h3>
+        <ul>
+          <li data-i18n="modulePickingItem1">Inventory reservation by user</li>
+          <li data-i18n="modulePickingItem2">Automatic assignment of oldest order</li>
+          <li data-i18n="modulePickingItem3">Work-in-progress persistence</li>
+          <li data-i18n="modulePickingItem4">Automatic adjustments and full traceability</li>
+        </ul>
+      </article>
+
+      <!-- Issue / Consumption -->
+      <article class="module-card">
+        <div class="module-icon">🔧</div>
+        <h3 data-i18n="moduleIssueTitle">Issue / Material Consumption</h3>
+        <ul>
+          <li data-i18n="moduleIssueItem1">Strict validation of part, location and quantity</li>
+          <li data-i18n="moduleIssueItem2">Location FIFO logic</li>
+          <li data-i18n="moduleIssueItem3">Negative inventory prevention</li>
+          <li data-i18n="moduleIssueItem4">Detailed movement log</li>
+        </ul>
+      </article>
+
+      <!-- Sub-Transfer -->
+      <article class="module-card">
+        <div class="module-icon">🔄</div>
+        <h3 data-i18n="moduleSubTransferTitle">Sub-Transfer (Internal Moves)</h3>
+        <ul>
+          <li data-i18n="moduleSubTransferItem1">Up to 10 moves in a single operation</li>
+          <li data-i18n="moduleSubTransferItem2">Quantity validation</li>
+          <li data-i18n="moduleSubTransferItem3">Double adjustment (source/destination)</li>
+          <li data-i18n="moduleSubTransferItem4">Auditable history with labels</li>
+        </ul>
+      </article>
+
+      <!-- Inventory & Reports -->
+      <article class="module-card">
+        <div class="module-icon">📊</div>
+        <h3 data-i18n="moduleInventoryTitle">Inventory & Web Reports</h3>
+        <ul>
+          <li data-i18n="moduleInventoryItem1">On-Hand and Inventory by Location</li>
+          <li data-i18n="moduleInventoryItem2">History and Orders Web Reports</li>
+          <li data-i18n="moduleInventoryItem3">Initial KPIs and dashboards</li>
+          <li data-i18n="moduleInventoryItem4">Export to Excel / PDF</li>
+        </ul>
+      </article>
+
+      <!-- Permissions -->
+      <article class="module-card">
+        <div class="module-icon">🔐</div>
+        <h3 data-i18n="modulePermissionsTitle">User Permissions (RBAC)</h3>
+        <ul>
+          <li data-i18n="modulePermissionsItem1">Button-level access control</li>
+          <li data-i18n="modulePermissionsItem2">Dynamic show/hide per user</li>
+          <li data-i18n="modulePermissionsItem3">Bulk upload via Excel</li>
+          <li data-i18n="modulePermissionsItem4">Table editing and advanced filters</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ======= Benefits ======= -->
+  <section class="section" id="benefits">
+    <div class="section-header">
+      <h2 data-i18n="benefitsTitle">Business Benefits</h2>
+      <p data-i18n="benefitsIntro">
+        ICS is not just software; it is a way to operate your warehouse with discipline and clarity.
+      </p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <h3 data-i18n="benefit1Title">Fewer operational errors</h3>
+        <p data-i18n="benefit1Body">
+          Validations at each step prevent over-receiving, wrong locations and incorrect quantities.
+        </p>
+      </div>
+      <div class="benefit-card">
+        <h3 data-i18n="benefit2Title">Complete inventory control</h3>
+        <p data-i18n="benefit2Body">
+          Each movement updates on-hand and history in a consistent, auditable way.
+        </p>
+      </div>
+      <div class="benefit-card">
+        <h3 data-i18n="benefit3Title">Faster workflows</h3>
+        <p data-i18n="benefit3Body">
+          Smart auto-fill, guided flows and Excel-like tables speed up daily operations.
+        </p>
+      </div>
+      <div class="benefit-card">
+        <h3 data-i18n="benefit4Title">Easier training</h3>
+        <p data-i18n="benefit4Body">
+          Clear screens and messages reduce the learning curve for new operators.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Pricing ======= -->
+  <section class="section section-alt" id="pricing">
+    <div class="section-header">
+      <h2 data-i18n="pricingTitle">Licensing & Pricing</h2>
+      <p data-i18n="pricingIntro">
+        Flexible monthly licensing that adapts to the size and needs of your operation.
+      </p>
+    </div>
+
+    <div class="pricing-card">
+      <h3 data-i18n="pricingPlanTitle">ICS – Standard Package</h3>
+      <p class="pricing-price" data-i18n="pricingRange">
+        10 user licenses: $1,500 – $3,500 USD / month
+      </p>
+      <ul>
+        <li data-i18n="pricingItem1">System access</li>
+        <li data-i18n="pricingItem2">Updates and improvements</li>
+        <li data-i18n="pricingItem3">Bug fixes</li>
+        <li data-i18n="pricingItem4">Technical support</li>
+        <li data-i18n="pricingItem5">Initial training</li>
+      </ul>
+      <a href="#contact" class="btn-primary" data-i18n="pricingCta">
+        Talk about your operation
+      </a>
+    </div>
+  </section>
+
+  <!-- ======= Screenshots placeholder ======= -->
+  <section class="section" id="screens">
+    <div class="section-header">
+      <h2 data-i18n="screensTitle">Screens & Workflow Examples</h2>
+      <p data-i18n="screensIntro">
+        ICS includes professional tables, draggable modals and web reports ready for real operations.
+      </p>
+    </div>
+    <div class="screens-grid">
+      <div class="screen-placeholder">
+        <span data-i18n="screensPlaceholder1">Receiving & Orders module</span>
+      </div>
+      <div class="screen-placeholder">
+        <span data-i18n="screensPlaceholder2">Inventory by Location report</span>
+      </div>
+      <div class="screen-placeholder">
+        <span data-i18n="screensPlaceholder3">History & web reports</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Contact ======= -->
+  <section class="section section-alt" id="contact">
+    <div class="section-header">
+      <h2 data-i18n="contactTitle">Contact & Next Steps</h2>
+      <p data-i18n="contactIntro">
+        Share a bit about your operation and we will explore how ICS can help you.
+      </p>
+    </div>
+
+    <div class="contact-layout">
+      <div class="contact-info">
+        <h3 data-i18n="contactCompanyTitle">Sanchez Web Apps LLC</h3>
+        <p data-i18n="contactCompanyBody">
+          We design inventory and warehouse solutions with real-world logic and a modern user experience.
+        </p>
+        <p>
+          <strong data-i18n="contactEmailLabel">Email:</strong>
+          <a href="mailto:info@sanchezwebapps.com">info@sanchezwebapps.com</a>
+        </p>
+        <p>
+          <strong data-i18n="contactLocationLabel">Location:</strong>
+          Los Angeles area, California, USA
+        </p>
+      </div>
+
+      <form action="https://formspree.io/f/xgovjwdv" method="POST" class="contact-form">
+        <div class="form-row">
+          <label for="name" data-i18n="contactFormNameLabel">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-row">
+          <label for="email" data-i18n="contactFormEmailLabel">Email</label>
+          <input type="email" id="email" name="_replyto" required />
+        </div>
+        <div class="form-row">
+          <label for="message" data-i18n="contactFormMessageLabel">Message</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" data-i18n="contactFormCta">
+          Send message
+        </button>
+
+        <!-- Mensaje elegante -->
+        <div id="formStatus" class="form-status"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ======= Footer ======= -->
+  <footer class="footer">
+    <p>
+      © <span id="year"></span> Sanchez Web Apps LLC ·
+      <span data-i18n="footerRights">All rights reserved.</span>
+    </p>
   </footer>
 
-  <section class="gallery">
-    <div class="card">
-      <img src="LogInSection.png" alt="Inventario del sistema"><br>
-      <p>
-        <span class="step-title">1. <strong>First Window:</strong></span> 
-        <span class="step-desc">This is the initial screen that will appear when you open the application.</span><br><br>
-
-        <span class="step-title">2. <strong>Login Request:</strong></span> 
-        <span class="step-desc">It will ask for your <span class="highlight">email</span> and <span class="highlight">password</span> in order to access the system.</span><br><br>
-
-        <span class="step-title">3. <strong>Validation:</strong></span><br>
-        • <span class="error">If the email or password does not match</span>, or if the account is not registered with the necessary permissions, the system will display an <span class="error">error message</span>.<br>
-        • <span class="success">If the credentials are correct and permissions are valid</span>, the application will proceed to the next section.
-      </p>
-    </div>
-
-    <div class="card">
-      <img src="Second-Screen.png" alt="Pedidos en tiempo real"><br>
-      <p>
-        <span class="step-title">🔹 <strong>Inventory Window:</strong></span> 
-        <span class="step-desc">This window appears once you have successfully logged in. It displays the segregated inventory with the following details for each product:</span><br><br>
-
-        <span class="highlight">• A unique product ID</span><br>
-        <span class="highlight">• Product name</span><br>
-        <span class="highlight">• Product description</span><br>
-        <span class="highlight">• Unit of measurement</span><br>
-        <span class="highlight">• Monthly usage of the product</span><br>
-        <span class="highlight">• Product status</span><br>
-        <span class="highlight">• Quantity available in inventory</span><br><br>
-
-        <span class="step-title">📂 <strong>Navigation Menu:</strong></span><br>
-        • At the <span class="info">top-left corner</span>, there is a dropdown menu.<br>
-        • When clicked, it expands to the right and shows the program’s available options.<br>
-        • On the <span class="info">top-right corner</span>, the name of the logged-in user is displayed.<br><br>
-
-        <span class="step-title">🔍 <strong>Filtering Options:</strong></span><br>
-        • Just below the menu, there are two input boxes for filtering the inventory:<br>
-        • The first input filters by <span class="success">partial match</span>.<br>
-        • The second input filters by <span class="success">exact match</span>.<br><br>
-
-        <span class="step-title">📊 <strong>Export Feature:</strong></span><br>
-        • Next to the input boxes, there is a dropdown menu.<br>
-        • This menu contains an option to <span class="highlight">export the inventory data to Excel</span>.<br>
-        • Exporting allows you to perform calculations or operations not permitted directly within the application.
-      </p>
-    </div>
-
-    <div class="card">
-      <img src="Third-Screen.png" alt="Reportes del negocio"><br>
-      <p>
-        <span class="step-title">📑 <strong>Menu Overview:</strong></span><br>
-        In this section, you can see the contents within the menu:<br><br>
-
-        <span class="highlight">1. <strong>Dashboard</strong></span> – The first option you will find.<br>
-        <span class="highlight">2. <strong>Segregated Inventory</strong></span> – Displays the entire inventory in a structured way.<br>
-        <span class="highlight">3. <strong>Detailed Inventory</strong></span> – Shows the inventory with more detail, including information such as the exact <span class="info">locations</span> where items are stored, as well as other details explained later.<br>
-        <span class="highlight">4. <strong>Transactions History</strong></span> – Accumulates all transactions generated. This record is very useful to clarify discrepancies and answer questions when something doesn’t match.<br>
-        <span class="highlight">5. <strong>Preloaded Products List</strong></span> – Contains products loaded in advance, ensuring the program only allows or validates exact movements.<br>
-        <span class="highlight">6. <strong>Locations Table</strong></span> – Helps validate movements by showing where items are stored.<br>
-        <span class="highlight">7. <strong>Physical Counts Table</strong></span> – Stores the physical counts that are generated.<br>
-        <span class="highlight">8. <strong>Modal Form for Counts</strong></span> – A modal form used to perform and record counts.
-      </p>
-    </div>
-
-    <div class="card">
-      <img src="Fourth-Screen.png" alt="Reportes del negocio"><br>
-      <p>
-        <span class="step-title">📊 <strong>Dashboard Overview:</strong></span><br>
-        When users access the Dashboard, they’ll find <span class="highlight">10 summary cards</span> and <span class="highlight">5 charts</span> that highlight key system data:<br><br>
-
-        <span class="highlight">• <strong>Card 1:</strong></span> Total active products<br>
-        <span class="highlight">• <strong>Card 2:</strong></span> Total active locations<br>
-        <span class="highlight">• <strong>Card 3:</strong></span> Transactions recorded today<br>
-        <span class="highlight">• <strong>Card 4:</strong></span> Total recorded movements<br>
-        <span class="highlight">• <strong>Card 5:</strong></span> Active products with inventory<br>
-        <span class="highlight">• <strong>Card 6:</strong></span> Active locations currently in use<br>
-        <span class="error">• <strong>Card 7:</strong></span> Products with discrepancies during physical counts<br>
-        <span class="success">• <strong>Card 8:</strong></span> Total physical counts completed<br>
-        <span class="info">• <strong>Card 9:</strong></span> Counts flagged with notes<br>
-        <span class="warning">• <strong>Card 10:</strong></span> Products with less than 10 months of inventory
-      </p>
-    </div>
-
-    <div class="card">
-      <img src="Sixth-Screen.png" alt="Reportes del negocio">
-      <img src="Fifth-Screen.png" alt="Reportes del negocio"><br>
-      <p>
-        <span class="step-title">📦 <strong>Inventory on Hand</strong></span><br>
-        When you click on <span class="highlight">“Inventory on Hand”</span>, you’ll see a complete view of your company’s inventory, including key details such as:<br>
-        <span class="info">• Part number</span><br>
-        <span class="info">• Product description</span><br>
-        <span class="info">• Unit of measure</span><br>
-        <span class="info">• Monthly usage</span><br>
-        <span class="info">• Part status</span><br>
-        <span class="info">• Total quantity available</span><br><br>
-
-        <span class="step-title">🔍 <strong>Filter Options:</strong></span><br>
-        - The first input filters by an <span class="success">exact product name</span>.<br>
-        - The second input filters by <span class="success">starting characters</span>, so you don’t need to type the full name.<br><br>
-
-        <span class="step-title">📂 <strong>Dropdown Menu:</strong></span><br>
-        - <span class="highlight">Import Inventory</span><br>
-        - <span class="highlight">Clear Inventory</span><br>
-        - <span class="highlight">Export All Inventory to Excel</span><br><br>
-
-        <span class="step-title">⚙️ <strong>Action Buttons:</strong></span><br>
-        - <span class="warning">Sub‑Transfers</span> – used to create sub‑transfer records.<br>
-        - <span class="error">Take Product</span> – used to withdraw or consume a product.<br>
-        - <span class="success">Add Product</span> – used to add a new product into the inventory.
-      </p>
-    </div>
-
-    <div class="card">
-      <img src="Seventh-Screen.png" alt="Reportes del negocio"><br>
-      <p>
-        <span class="step-title">➕ <strong>Add Product Modal</strong></span><br>
-        This form is used to <span class="success">add new products</span> to a specific location.<br><br>
-
-        • <span class="info">Validates both the part number and location</span> to ensure they exist in the system.<br>
-        • <span class="error">Invalid or non‑existent entries</span> are blocked to maintain data integrity.<br>
-        • Every product added through this form <span class="highlight">automatically updates the inventory</span> and records the executed movement in the history log.
-      </p>
-    </div>
-
-    <div class="card">
-      <img src="Eight-Screen.png" alt="Reportes del negocio"><br>
-      <p>
-        <span class="step-title">➖ <strong>Take Product Modal</strong></span><br>
-        This form is used to <span class="warning">remove or consume inventory</span> from a specific location.<br><br>
-
-        • <span class="info">Validates both the part number and location</span> to ensure they are valid.<br>
-        • <span class="error">Checks the available quantity:</span> if you attempt to withdraw more than what is in stock 
-          (e.g., request 100 units but only 80 are available), the system will block the action.<br>
-        • Every product removed through this form <span class="highlight">automatically updates the inventory</span> and records the transaction in the history log.
-      </p>
-    </div>
-
-    <div class="card">
-      <img src="Nineth-Screen.png" alt="Reportes del negocio"><br>
-      <p>
-        <span class="step-title">📜 <strong>History</strong></span><br>
-        When you click on <span class="highlight">“History”</span>, you’ll see a complete record of all transactions you’ve made.<br><br>
-
-        <span class="step-title">🔍 <strong>Filter Options:</strong></span><br>
-        • The first input filters by an <span class="success">exact product name</span>.<br>
-        • The second input filters by <span class="success">starting characters</span>, so you don’t need to type the full name.<br><br>
-
-        <span class="step-title">📂 <strong>Dropdown Menu:</strong></span><br>
-        • <span class="error">Clear History Table</span><br>
-        • <span class="highlight">Export All History to Excel</span>
-      </p>
-    </div>
-
-    <div class="card">
-      <img src="Tenth-Screen.png" alt="Reportes del negocio"><br>
-      <p>
-        <span class="step-title">📦 <strong>Item List</strong></span><br>
-        When you click on <span class="highlight">“Item List”</span>, you’ll see all active items in the system.<br><br>
-
-        <span class="step-title">🔍 <strong>Filter Options:</strong></span><br>
-        • The first input filters by an <span class="success">exact product name</span>.<br>
-        • The second input filters by <span class="success">starting characters</span>, so you don’t need to type the full name.<br><br>
-
-        <span class="step-title">📂 <strong>Dropdown Menu:</strong></span><br>
-        • <span class="highlight">Import Item List</span><br>
-        • <span class="error">Clear Item List</span><br>
-        • <span class="highlight">Export Item List to Excel</span>
-      </p>
-    </div>
-
-    <div class="card">
-      <img src="Eleventh-Screen.png" alt="Reportes del negocio"><br>
-      <p>
-        <span class="step-title">📍 <strong>Location List</strong></span><br>
-        When you click on <span class="highlight">“Location List”</span>, you’ll see all active locations in the system.<br><br>
-
-        <span class="step-title">🔍 <strong>Filter Options:</strong></span><br>
-        • The first input filters by an <span class="success">exact location name</span>.<br>
-        • The second input filters by <span class="success">starting characters</span>, so you don’t need to type the full name.<br><br>
-
-        <span class="step-title">📂 <strong>Dropdown Menu:</strong></span><br>
-        • <span class="highlight">Import Location List</span><br>
-        • <span class="error">Clear Location List</span><br>
-        • <span class="highlight">Export Location List to Excel</span>
-      </p>
-    </div>
-
-    <div class="card">
-      <img src="Twelveth-Screen.png" alt="Reportes del negocio"><br>
-      <p>
-        <span class="step-title">📝 <strong>Physical Count Modal</strong></span><br>
-        This modal form is used to <span class="success">generate physical counts</span>.<br><br>
-
-        • Enter the <span class="info">product name, unit of measure, and description</span>. The system will verify whether the entered part number exists.<br>
-        • Input the <span class="highlight">counted quantity</span> and the <span class="info">location</span> where the count is being performed.<br>
-        • If everything is correct and you click <span class="success">Save</span>, the information will be stored in the physical counts table.<br>
-        • If the product name or location is incorrect, the system will display an <span class="error">error message</span> and highlight the incorrect field with a red border.<br>
-        • Once corrected, click <span class="success">Save</span> again. After saving, the form is cleared and ready for the next count.<br><br>
-
-        <span class="step-title">📊 <strong>Data Stored in the Physical Counts Table:</strong></span><br>
-        • <span class="highlight">Tag Number</span> – unique sequential number assigned to each count.<br>
-        • <span class="highlight">Product Name</span> – name of the product counted.<br>
-        • <span class="highlight">Description</span> – product description.<br>
-        • <span class="highlight">Counted Quantity</span> – quantity entered during the count.<br>
-        • <span class="highlight">Count Date</span> – date of the count.<br>
-        • <span class="highlight">Count Time</span> – time of the count.<br>
-        • <span class="highlight">Location</span> – where the count took place.<br>
-        • <span class="highlight">User Name</span> – person who executed the count.<br>
-        • <span class="error">Discrepancy Check</span> – compares expected vs. counted quantity.<br>
-        • <span class="info">Previous Quantity</span> – shows what was recorded before the count.<br>
-        • <span class="success">Editable Notes Field</span> – allows comments after completing a count.<br><br>
-
-        <span class="step-title">🔒 <strong>Access Control:</strong></span><br>
-        • Counts are filtered so that only the <span class="info">logged‑in user</span> can view their own records.<br>
-        • The <span class="warning">administrator</span> is the only person with permission to view all counts across the system.
-      </p>
-    </div>
-    
-  </section>
-  
-  
-  <section class="cta">
-    <h2>Do you want to try it?</h2>
-    <button id="demoBtn">Request Demo</button>
-  </section>
-  
-    
-  <!-- Vinculamos el JS externo -->
-  <script src="script.js"></script>
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
