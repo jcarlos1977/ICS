@@ -98,3 +98,25 @@ if (contactForm && formStatus) {
     }, 5000);
   });
 }
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+});
+
+document.querySelectorAll(".screen-img").forEach(img => {
+  observer.observe(img);
+});
+
+const gallery = document.querySelector(".screens-gallery");
+const btn = document.getElementById("showMoreScreens");
+
+gallery.classList.add("collapsed");
+
+btn.addEventListener("click", () => {
+  gallery.classList.remove("collapsed");
+  btn.style.display = "none";
+});
