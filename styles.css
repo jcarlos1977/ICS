@@ -521,3 +521,18 @@ body {
   transform: scale(1.05);
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
+
+.screen-img {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.screen-img.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.screens-gallery.collapsed img:nth-child(n+2) {
+  display: none;
+}
