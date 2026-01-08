@@ -501,38 +501,55 @@ body {
   border: 1px solid #e74c3c;
 }
 
+/* 📌 Galería responsive tipo grid */
 .screens-gallery {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-  justify-content: center;
   margin-top: 2rem;
+  width: 100%;
 }
 
+/* 📌 Imágenes que se ajustan al ancho del contenedor */
 .screen-img {
-  max-width: 320px;
   width: 100%;
+  height: auto;
+  max-width: none; /* elimina el límite de 320px */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.screen-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-}
-
-.screen-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease, transform 0.8s ease;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+/* 📌 Animación de entrada */
 .screen-img.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* 📌 Hover elegante */
+.screen-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* 📌 Botón siempre visible */
+#showMoreScreens {
+  display: block;
+  margin: 2rem auto 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* 📌 Mantener tu lógica de colapsado */
 .screens-gallery.collapsed img:nth-child(n+2) {
   display: none;
+}
+
+/* 📌 Ajustes móviles */
+@media (max-width: 600px) {
+  .screens-gallery {
+    grid-template-columns: 1fr;
+  }
 }
