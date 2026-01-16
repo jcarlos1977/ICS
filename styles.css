@@ -574,27 +574,21 @@ body {
 }
 
 .screens-slider-wrapper {
+  width: 100%;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 1rem;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
 .screens-slider {
-  display: flex;
-  gap: 1.5rem;
+  display: inline-flex;
+  flex-wrap: nowrap;
 }
 
 .screen-img {
   flex: 0 0 auto;
-  width: 100%;
-  max-width: 600px;
-  scroll-snap-align: start;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease;
-  opacity: 0;
-  transform: translateY(20px);
+  width: 600px; /* o el tamaño que quieras */
+  max-width: 90vw;
 }
 
 .screen-img.visible {
