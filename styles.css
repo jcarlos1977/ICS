@@ -578,6 +578,12 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
+  min-height: 600px; /* antes tenías 300px */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
 }
 
 .screens-slider {
@@ -589,6 +595,10 @@ body {
   flex: 0 0 auto;
   width: 600px; /* o el tamaño que quieras */
   max-width: 90vw;
+  max-height: 500px; /* o incluso 600px si quieres más impacto */
+  scroll-snap-align: start;
+
+
 }
 
 .screen-img.visible {
