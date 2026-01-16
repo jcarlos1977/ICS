@@ -117,6 +117,8 @@ const btn = document.getElementById("showMoreScreens");
 gallery.classList.add("collapsed");
 
 btn.addEventListener("click", () => {
-  gallery.classList.remove("collapsed");
-  btn.style.display = "none";
+  document.querySelector(".screens-slider-wrapper").scrollBy({
+    left: 600,
+    behavior: "smooth"
+  });
 });
