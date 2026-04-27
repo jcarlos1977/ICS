@@ -111,6 +111,7 @@ document.querySelectorAll(".screen-img").forEach(img => {
   observer.observe(img);
 });
 
+/*
 const gallery = document.querySelector(".screens-gallery");
 const btn = document.getElementById("showMoreScreens");
 
@@ -120,5 +121,47 @@ btn.addEventListener("click", () => {
   document.querySelector(".screens-slider-wrapper").scrollBy({
     left: 600,
     behavior: "smooth"
+  });
+});
+*/
+
+const gallery = document.querySelector(".screens-gallery");
+const btn = document.getElementById("showMoreScreens");
+
+if (gallery) {
+  gallery.classList.add("collapsed");
+}
+
+if (btn) {
+  btn.addEventListener("click", () => {
+    document.querySelector(".screens-slider-wrapper").scrollBy({
+      left: 600,
+      behavior: "smooth"
+    });
+  });
+}
+
+
+// Cerrar todos los acordeones al inicio
+document.querySelectorAll(".accordion-body").forEach(body => {
+  body.style.display = "none";
+});
+
+// Lógica del acordeón
+document.querySelectorAll(".accordion-header").forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    // Encuentra el body dentro del mismo accordion-item
+    const item = btn.closest(".accordion-item");
+    const body = item.querySelector(".accordion-body");
+
+    // Alternar estado
+    if (body.style.display === "block") {
+      body.style.display = "none";
+      btn.classList.remove("active");
+    } else {
+      body.style.display = "block";
+      btn.classList.add("active");
+    }
   });
 });
