@@ -115,13 +115,45 @@
           <button class="accordion-header">Inventory On Hand</button>
           <div class="accordion-body">
             <ul>
-              <li>Real-time quantity tracking</li>
-              <li>Quick filters & Advance filters</li>
-              <li>Web reports</li>
-              <li>Export functions to: Excel & CSV</li>
-              <li>Row slection like MS Excel Spread Sheet</li>
-              <li>Hover Active</li>
-              <li>Table information: Part#, Description, U/O, Monthly usage, Status, Qty on hand and Months on hand. </li>             
+              <li>ICS – Inventory On‑Hand Module (Summary)
+              The Inventory On‑Hand module provides a fast, interactive, and highly visual way to understand real‑time stock levels across the operation. It is designed to behave like a modern spreadsheet—intuitive, responsive, and optimized for high‑volume warehouse environments.
+
+              Key Capabilities
+              Real‑time quantity tracking  
+              Continuously updated on‑hand balances ensure operators always see the most accurate inventory levels.
+
+              Quick Filters & Advanced Filters  
+              Users can instantly narrow results using simple quick filters or apply multi‑criteria advanced filters for deeper analysis.
+
+              Excel‑like Interaction  
+              The table supports row selection with full‑row highlighting and active‑cell focus, mimicking the familiar behavior of Microsoft Excel. This makes navigation and data review extremely fast for warehouse teams.
+
+              Hover Interaction  
+              Rows respond visually when the mouse passes over them, improving readability and reducing selection errors.
+
+              Export Tools  
+              Inventory data can be exported directly to Excel or CSV, enabling offline analysis, reporting, or integration with other systems.
+
+              Web Report Integration  
+              A built‑in web report allows users to generate structured inventory reports based on different criteria, supporting audits, cycle counts, and operational reviews.
+
+              Data Fields Included
+              The module displays all essential inventory attributes in a single, clean view:
+
+              Part Number
+
+              Description
+
+              Unit of Measure (U/M)
+
+              Monthly Usage
+
+              Status
+
+              Quantity On Hand
+
+              Months of Inventory Available</li>
+                         
 
             </ul>
           </div>
@@ -131,22 +163,173 @@
           <button class="accordion-header">Inventory by Location</button>
           <div class="accordion-body">
             <ul>
-              <li>Dynamic filters</li>
-              <li>Excel-like sorting</li>
-              <li>Multi-select with CTRL</li>
-              <li>Location validation rules</li>
+              <li>ICS – Inventory by Location Module (Summary)
+              The Inventory by Location module provides a detailed, real‑time view of stock distribution across every warehouse location. It is designed for operational accuracy, fast navigation, and high‑volume transaction processing, combining spreadsheet‑like usability with strict WMS‑grade validations.
+
+              Key Capabilities
+              Quick Filters & Advanced Filters  
+              Users can instantly narrow results or apply multi‑criteria filtering to analyze inventory by part, location, status, or any other attribute.
+
+              Excel‑Style Interaction  
+              The table behaves like a modern spreadsheet:
+
+              Full‑row highlight when selected
+
+              Active‑cell highlight showing the exact clicked cell
+
+              Smooth hover effects for fast scanning
+              This makes the interface extremely intuitive for warehouse operators.
+
+              Export Tools  
+              Inventory can be exported to Excel or CSV for reporting, audits, or external analysis.
+
+              Bulk Import Tools
+
+              Full inventory replacement during physical counts
+
+              Mass inventory adjustments without manual entry
+              These tools dramatically reduce time and eliminate human error during large updates.
+
+              Operational Functions (Real‑Time & Validated)
+              This module is not just a table — it is an operational engine. It includes several real‑time inventory actions:
+
+              Sub‑Transfer (Location‑to‑Location Movement)  
+              Move material from one location to another with automatic adjustments to both source and destination.
+              Every movement is validated and recorded in the system history.
+
+              Ship (Material Consumption / Picking)  
+              Remove inventory from a location in real time.
+              The system logs:
+
+              What was taken
+
+              From which location
+
+              When
+
+              By which user
+              All with strict validation to prevent incorrect part numbers or invalid locations.
+
+              Receive (Add Inventory)  
+              Add material into a location with real‑time updates and full validation.
+              Ensures that only valid part numbers and valid locations are used.
+
+              Strict Validation Logic
+              All operations in this module are protected by strong validation rules:
+
+              Prevents entering part numbers that do not exist in the system
+
+              Prevents using locations that are not registered
+
+              Ensures quantities are correct and consistent
+
+              Blocks invalid or incomplete transactions
+
+              This guarantees data integrity and prevents operational mistakes.
+
+              Real‑Time History Tracking
+              Every action—ship, receive, sub‑transfer, bulk import, or physical count—automatically writes a detailed record into the system history, ensuring full traceability for audits and operational reviews.</li>
+              
             </ul>
           </div>
         </div>
 
         <div class="accordion-item">
-          <button class="accordion-header">Receiving (PO Controlled)</button>
+          <button class="accordion-header">Item & Location Table</button>
           <div class="accordion-body">
             <ul>
-              <li>PO validation</li>
-              <li>Over-receiving prevention</li>
-              <li>Partial receipts</li>
-              <li>Auto-fill logic</li>
+              <li>ICS – Item List & Location List Modules (Summary)
+              The Item List and Location List modules form the core master‑data foundation of the ICS WMS. Every validation, every transaction, and every inventory movement depends on the accuracy and integrity of these two tables. Without them, the system cannot guarantee consistency, correctness, or traceability.
+
+              Why These Tables Matter
+              These modules define the official catalog of products and warehouse locations.
+              They ensure that:
+
+              Only valid part numbers can be received, shipped, transferred, or adjusted
+
+              Only registered and active locations can be used in operations
+
+              All inventory activity is tied to clean, controlled master data
+
+              The system remains consistent and auditable across all modules
+
+              They are the “source of truth” for the entire WMS.
+
+              Item List – Key Capabilities
+              The Item List stores all essential product attributes required for inventory control and reporting:
+
+              Part Number
+
+              Product Description
+
+              Unit of Measure (U/M)
+
+              Monthly Usage
+
+              Status (Active / Inactive)
+
+              The status field is especially important:
+              Inactive items remain in the system for historical reference, ensuring past transactions remain traceable while preventing new activity on discontinued parts.
+
+              Functional Features
+              Quick Filters & Advanced Filters
+
+              Bulk Import of Items (avoid manual entry)
+
+              Export to Excel / CSV
+
+              Excel‑style row selection
+
+              Full‑row highlight
+
+              Active‑cell highlight
+
+              Hover interaction for fast scanning
+
+              These features make the Item List fast, intuitive, and easy to maintain even with thousands of SKUs.
+
+              Location List – Key Capabilities
+              The Location List defines every valid storage location in the warehouse.
+              Each location includes:
+
+              Location Code
+
+              Status (Active / Inactive)
+
+              Inactive locations remain available for historical reference, ensuring past movements remain valid while preventing new transactions in obsolete areas.
+
+              Functional Features
+              Quick Filters & Advanced Filters
+
+              Bulk Import of Locations
+
+              Export to Excel / CSV
+
+              Excel‑style interaction
+
+              Full‑row highlight
+
+              Active‑cell highlight
+
+              Hover effects for improved readability
+
+              These tools make it easy to maintain a clean, accurate location structure — essential for all receiving, picking, transfers, and cycle counts.
+
+              Why These Modules Are Critical
+              Together, the Item List and Location List ensure:
+
+              Strict validation across all operational modules
+
+              Error‑free receiving, shipping, and transfers
+
+              Consistent inventory history
+
+              Accurate reporting and KPIs
+
+              A stable foundation for all real‑time transactions
+
+              They are not just reference tables — they are the backbone of the entire ICS WMS.</li>
+              
             </ul>
           </div>
         </div>
