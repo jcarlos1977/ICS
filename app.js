@@ -165,3 +165,35 @@ document.querySelectorAll(".accordion-header").forEach(btn => {
     }
   });
 });
+
+
+function openAccordion(btn) {
+  const target = btn.getAttribute("data-target");
+
+  // 1. Cerrar todos los accordion-body
+  document.querySelectorAll(".accordion-body").forEach(body => {
+    body.style.display = "none";
+  });
+
+  // 2. Quitar highlight de todos los botones
+  document.querySelectorAll(".tech-column button").forEach(b => {
+    b.classList.remove("active-accordion-btn");
+  });
+
+  // 3. Activar solo el botón presionado
+  btn.classList.add("active-accordion-btn");
+
+  // 4. Abrir el acordeón correcto
+  document.querySelectorAll(".accordion-header").forEach(header => {
+    if (header.getAttribute("data-target") === target) {
+      const body = header.nextElementSibling;
+      if (body) {
+        body.style.display = "block";
+      }
+    }
+  });
+}
+
+
+
+
