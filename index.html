@@ -109,229 +109,2922 @@
         <p>Explore the internal tables, validations and logic behind each module.</p>
       </div>
 
+      
+      <!-- ===== LANGUAGE BUTTON COLUMNS ===== -->
+      <div class="tech-buttons-container">
+
+        <!-- English Column -->
+        <div class="tech-column">
+          <h3>English</h3>
+          <button data-target="dashboard1" onclick="openAccordion(this)">Dashboard</button>
+          <button data-target="inventoryOnHand1" onclick="openAccordion(this)">Inventory On Hand</button>
+          <button data-target="inventoryByLocation1" onclick="openAccordion(this)">Inventory by Location</button>
+          <button data-target="itemLocationTable1" onclick="openAccordion(this)">Item & Location Table</button>
+          <button data-target="purchaseOrders1" onclick="openAccordion(this)">Purchase Orders</button>
+          <button data-target="orderRequestTable1" onclick="openAccordion(this)">Order Request Table</button>
+          <button data-target="historyTable1" onclick="openAccordion(this)">History Table</button>
+          <button data-target="pickingOrders1" onclick="openAccordion(this)">Picking Orders / Replacement</button>
+          <button data-target="incomingLoadsSorting1" onclick="openAccordion(this)">Incoming Loads (Sorting process)</button>
+          <button data-target="incomingLoadsVerification1" onclick="openAccordion(this)">Incoming Loads verification</button>
+          <button data-target="physicalCountTable1" onclick="openAccordion(this)">Physical count Table</button>
+        </div>
+
+
+        <!-- Spanish Column -->
+        <div class="tech-column">
+          <h3>Español</h3>
+          <button data-target="dashboard2" onclick="openAccordion(this)">Dashboard2</button>
+          <button data-target="inventoryOnHand2" onclick="openAccordion(this)">Inventario Disponible</button>
+          <button data-target="inventoryByLocation2" onclick="openAccordion(this)">Inventario por Ubicación</button>
+          <button data-target="itemLocationTable2" onclick="openAccordion(this)">Tabla de Artículos y Ubicaciones</button>
+          <button data-target="purchaseOrders2" onclick="openAccordion(this)">Órdenes de Compra</button>
+          <button data-target="orderRequestTable2" onclick="openAccordion(this)">Tabla de Solicitudes</button>
+          <button data-target="historyTable2" onclick="openAccordion(this)">Historial</button>
+          <button data-target="pickingOrders2" onclick="openAccordion(this)">Órdenes de Picking / Reemplazo</button>
+          <button data-target="incomingLoadsSorting2" onclick="openAccordion(this)">Cargas Entrantes (Clasificación)</button>
+          <button data-target="incomingLoadsVerification2" onclick="openAccordion(this)">Verificación de Cargas Entrantes</button>
+          <button data-target="physicalCountTable2" onclick="openAccordion(this)">Tabla de Conteo Físico</button>
+        </div>
+
+
+        <!-- Chinese Column -->
+        <div class="tech-column">
+          <h3>中文</h3>
+          <button data-target="dashboard3" onclick="openAccordion(this)">仪表板</button>
+          <button data-target="inventoryOnHand3" onclick="openAccordion(this)">库存现有量</button>
+          <button data-target="inventoryByLocation3" onclick="openAccordion(this)">按库位库存</button>
+          <button data-target="itemLocationTable3" onclick="openAccordion(this)">物品与库位表</button>
+          <button data-target="purchaseOrders3" onclick="openAccordion(this)">采购订单</button>
+          <button data-target="orderRequestTable3" onclick="openAccordion(this)">申请单表</button>
+          <button data-target="historyTable3" onclick="openAccordion(this)">历史记录</button>
+          <button data-target="pickingOrders3" onclick="openAccordion(this)">拣货单 / 替换</button>
+          <button data-target="incomingLoadsSorting3" onclick="openAccordion(this)">入库分拣流程</button>
+          <button data-target="incomingLoadsVerification3" onclick="openAccordion(this)">入库验证</button>
+          <button data-target="physicalCountTable3" onclick="openAccordion(this)">盘点表</button>
+        </div>
+
+
+      </div>
+
+      
+
       <div class="accordion">
 
         <div class="accordion-item">
-          <button class="accordion-header">Inventory On Hand</button>
+          <button class="accordion-header" data-target="dashboard1">Dashboard</button>
           <div class="accordion-body">
             <ul>
-              <li>ICS – Inventory On‑Hand Module (Summary)
-              The Inventory On‑Hand module provides a fast, interactive, and highly visual way to understand real‑time stock levels across the operation. It is designed to behave like a modern spreadsheet—intuitive, responsive, and optimized for high‑volume warehouse environments.
+              <li>
+                <strong>ICS – Dashboard Module (Summary)</strong><br><br>
+                The ICS Dashboard provides a simple but effective real‑time overview of key operational metrics across the system. Although intentionally lightweight in its current version, it already delivers essential visibility into product activity, location usage, physical count notes, and movement trends. It is designed to grow and adapt as more modules and analytics are added to the platform.<br><br>
 
-              Key Capabilities
-              Real‑time quantity tracking  
-              Continuously updated on‑hand balances ensure operators always see the most accurate inventory levels.
+                <strong>Key Metrics Displayed</strong><br>
+                The dashboard presents several high‑level indicators that summarize the state of the inventory and system activity:<br><br>
 
-              Quick Filters & Advanced Filters  
-              Users can instantly narrow results using simple quick filters or apply multi‑criteria advanced filters for deeper analysis.
+                <strong>1. Product Overview</strong><br>
+                • Total number of products registered in the system<br>
+                • Active products currently in use<br>
+                • Inactive products not being used<br>
+                <em>This helps users quickly understand the size and health of the product catalog.</em><br><br>
 
-              Excel‑like Interaction  
-              The table supports row selection with full‑row highlighting and active‑cell focus, mimicking the familiar behavior of Microsoft Excel. This makes navigation and data review extremely fast for warehouse teams.
+                <strong>2. Location Overview</strong><br>
+                • Total number of warehouse locations<br>
+                • Active locations currently being used<br>
+                • Inactive locations reserved for reference or historical purposes<br>
+                <em>This provides a snapshot of warehouse capacity and utilization.</em><br><br>
 
-              Hover Interaction  
-              Rows respond visually when the mouse passes over them, improving readability and reducing selection errors.
+                <strong>3. Physical Count Notes</strong><br>
+                The dashboard highlights whether any notes were added during recent physical counts.<br>
+                <em>This allows supervisors to quickly identify items that require review, recounting, or follow‑up.</em><br><br>
 
-              Export Tools  
-              Inventory data can be exported directly to Excel or CSV, enabling offline analysis, reporting, or integration with other systems.
+                <strong>4. Inventory Movement Summary</strong><br>
+                The dashboard displays:<br>
+                • Total movements recorded today in the History module<br>
+                • Total movements recorded overall<br>
+                <em>This gives immediate visibility into daily activity levels and long‑term operational volume.</em><br><br>
 
-              Web Report Integration  
-              A built‑in web report allows users to generate structured inventory reports based on different criteria, supporting audits, cycle counts, and operational reviews.
+                <strong>Interactive Charts</strong><br>
+                At the bottom of the dashboard, users can visualize movement data through a dynamic chart component.<br>
+                The chart supports multiple display modes:<br>
+                • Bar Chart<br>
+                • Line Chart<br>
+                • Pie Chart<br>
+                • Doughnut Chart<br><br>
+                These charts are linked directly to the History module and can display:<br>
+                • Movements by Type (Inbound, Put Away, Ship, Adjustments, etc.)<br>
+                • Movements by User (Today)<br>
+                • Movements by User (All Time)<br>
+                • Inventory Counts by User<br>
+                <em>This allows users to analyze operational patterns, identify workload distribution, and detect unusual activity.</em><br><br>
 
-              Data Fields Included
-              The module displays all essential inventory attributes in a single, clean view:
+                <strong>Current Purpose & Future Expansion</strong><br>
+                Although the dashboard is intentionally simple at this stage, it serves as a foundation for future enhancements.<br>
+                The long‑term vision is to:<br>
+                • Provide module‑specific dashboards<br>
+                • Display KPIs for receiving, put‑away, shipping, and cycle counts<br>
+                • Integrate alerts, exceptions, and performance indicators<br>
+                • Offer customizable widgets for different departments<br><br>
+                For now, the dashboard acts as a clean, centralized snapshot of system activity, giving users a quick understanding of what is happening across ICS.
+              </li>
+            </ul>
+          </div>
+        </div>
 
-              Part Number
 
-              Description
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="dashboard2">Dashboard2</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Módulo de Dashboard (Resumen)</strong><br><br>
+                El Dashboard de ICS proporciona una vista general simple pero efectiva de los principales indicadores operativos en tiempo real. Aunque es intencionalmente ligero en su versión actual, ya ofrece visibilidad esencial sobre la actividad de productos, uso de ubicaciones, notas de conteos físicos y tendencias de movimientos. Está diseñado para crecer y adaptarse a medida que se agregan más módulos y análisis a la plataforma.<br><br>
 
-              Unit of Measure (U/M)
+                <strong>Métricas Principales Mostradas</strong><br>
+                El dashboard presenta varios indicadores de alto nivel que resumen el estado del inventario y la actividad del sistema:<br><br>
 
-              Monthly Usage
+                <strong>1. Resumen de Productos</strong><br>
+                • Total de productos registrados en el sistema<br>
+                • Productos activos actualmente en uso<br>
+                • Productos inactivos que no se utilizan<br>
+                <em>Esto ayuda a los usuarios a entender rápidamente el tamaño y la salud del catálogo de productos.</em><br><br>
 
-              Status
+                <strong>2. Resumen de Ubicaciones</strong><br>
+                • Total de ubicaciones en el almacén<br>
+                • Ubicaciones activas actualmente en uso<br>
+                • Ubicaciones inactivas reservadas para referencia o historial<br>
+                <em>Esto proporciona una vista rápida de la capacidad y utilización del almacén.</em><br><br>
 
-              Quantity On Hand
+                <strong>3. Notas de Conteos Físicos</strong><br>
+                El dashboard muestra si se agregaron notas durante conteos físicos recientes.<br>
+                <em>Esto permite a los supervisores identificar rápidamente artículos que requieren revisión, recuento o seguimiento.</em><br><br>
 
-              Months of Inventory Available</li>
-                         
+                <strong>4. Resumen de Movimientos de Inventario</strong><br>
+                El dashboard muestra:<br>
+                • Movimientos registrados hoy en el módulo de History<br>
+                • Movimientos registrados en total<br>
+                <em>Esto brinda visibilidad inmediata sobre los niveles de actividad diaria y el volumen operativo a largo plazo.</em><br><br>
 
+                <strong>Gráficas Interactivas</strong><br>
+                En la parte inferior del dashboard, los usuarios pueden visualizar datos de movimientos mediante un componente de gráficas dinámicas.<br>
+                Las gráficas soportan múltiples modos de visualización:<br>
+                • Gráfica de Barras<br>
+                • Gráfica de Líneas<br>
+                • Gráfica de Pastel<br>
+                • Gráfica de Dona<br><br>
+                Estas gráficas están vinculadas directamente al módulo de History y pueden mostrar:<br>
+                • Movimientos por Tipo (Inbound, Put Away, Ship, Ajustes, etc.)<br>
+                • Movimientos por Usuario (Hoy)<br>
+                • Movimientos por Usuario (Todo el Tiempo)<br>
+                • Conteos de Inventario por Usuario<br>
+                <em>Esto permite analizar patrones operativos, identificar distribución de carga de trabajo y detectar actividad inusual.</em><br><br>
+
+                <strong>Propósito Actual y Expansión Futura</strong><br>
+                Aunque el dashboard es intencionalmente simple en esta etapa, sirve como base para futuras mejoras.<br>
+                La visión a largo plazo incluye:<br>
+                • Proveer dashboards específicos por módulo<br>
+                • Mostrar KPIs para receiving, put‑away, shipping y conteos<br>
+                • Integrar alertas, excepciones e indicadores de rendimiento<br>
+                • Ofrecer widgets personalizables para diferentes departamentos<br><br>
+                Por ahora, el dashboard funciona como una vista centralizada y clara de la actividad del sistema, brindando a los usuarios una comprensión rápida de lo que ocurre en ICS.
+              </li>
             </ul>
           </div>
         </div>
 
         <div class="accordion-item">
-          <button class="accordion-header">Inventory by Location</button>
+          <button class="accordion-header" data-target="dashboard3">仪表板</button>
           <div class="accordion-body">
             <ul>
-              <li>ICS – Inventory by Location Module (Summary)
-              The Inventory by Location module provides a detailed, real‑time view of stock distribution across every warehouse location. It is designed for operational accuracy, fast navigation, and high‑volume transaction processing, combining spreadsheet‑like usability with strict WMS‑grade validations.
+              <li>
+                <strong>ICS – 仪表板模块（摘要）</strong><br><br>
+                ICS 仪表板提供一个简单但高效的实时视图，用于展示系统中的关键运营指标。虽然当前版本设计得较为轻量，但已经能够清晰呈现产品活动、库位使用情况、盘点备注以及库存移动趋势。该模块旨在随着更多功能与分析工具的加入而不断扩展与优化。<br><br>
 
-              Key Capabilities
-              Quick Filters & Advanced Filters  
-              Users can instantly narrow results or apply multi‑criteria filtering to analyze inventory by part, location, status, or any other attribute.
+                <strong>主要显示的指标</strong><br>
+                仪表板展示多个高层级指标，用于概括库存状态与系统活动：<br><br>
 
-              Excel‑Style Interaction  
-              The table behaves like a modern spreadsheet:
+                <strong>1. 产品概览</strong><br>
+                • 系统中注册的产品总数<br>
+                • 当前使用中的活跃产品<br>
+                • 未使用的非活跃产品<br>
+                <em>帮助用户快速了解产品目录的规模与健康状况。</em><br><br>
 
-              Full‑row highlight when selected
+                <strong>2. 库位概览</strong><br>
+                • 仓库库位总数<br>
+                • 当前使用中的活跃库位<br>
+                • 保留用于参考或历史的非活跃库位<br>
+                <em>提供仓库容量与利用率的即时快照。</em><br><br>
 
-              Active‑cell highlight showing the exact clicked cell
+                <strong>3. 盘点备注</strong><br>
+                仪表板会显示最近盘点中是否添加了备注。<br>
+                <em>帮助主管快速识别需要复查、复点或跟进的项目。</em><br><br>
 
-              Smooth hover effects for fast scanning
-              This makes the interface extremely intuitive for warehouse operators.
+                <strong>4. 库存移动摘要</strong><br>
+                仪表板显示：<br>
+                • 今日在 History 模块中记录的移动总数<br>
+                • 系统中累计记录的移动总数<br>
+                <em>提供对每日活动水平与长期操作量的即时可视化。</em><br><br>
 
-              Export Tools  
-              Inventory can be exported to Excel or CSV for reporting, audits, or external analysis.
+                <strong>互动图表</strong><br>
+                在仪表板底部，用户可以通过动态图表组件查看库存移动数据。<br>
+                图表支持多种显示模式：<br>
+                • 柱状图（Bar Chart）<br>
+                • 折线图（Line Chart）<br>
+                • 饼图（Pie Chart）<br>
+                • 圆环图（Doughnut Chart）<br><br>
+                这些图表直接连接到 History 模块，可显示：<br>
+                • 按类型分类的移动（入库、上架、出库、调整等）<br>
+                • 按用户分类的移动（今日）<br>
+                • 按用户分类的移动（全部时间）<br>
+                • 按用户分类的库存盘点数量<br>
+                <em>帮助用户分析操作模式、识别工作量分布并发现异常活动。</em><br><br>
 
-              Bulk Import Tools
+                <strong>当前用途与未来扩展</strong><br>
+                虽然仪表板目前较为简洁，但它是未来增强功能的基础。<br>
+                长期规划包括：<br>
+                • 提供模块级仪表板<br>
+                • 显示收货、上架、出库与盘点的 KPI<br>
+                • 集成警报、异常与绩效指标<br>
+                • 为不同部门提供可自定义组件<br><br>
+                目前，仪表板作为系统活动的集中快照，为用户提供快速、清晰的整体视图，帮助他们了解 ICS 中正在发生的情况。
+              </li>
+            </ul>
+          </div>
+        </div>
 
-              Full inventory replacement during physical counts
 
-              Mass inventory adjustments without manual entry
-              These tools dramatically reduce time and eliminate human error during large updates.
 
-              Operational Functions (Real‑Time & Validated)
-              This module is not just a table — it is an operational engine. It includes several real‑time inventory actions:
 
-              Sub‑Transfer (Location‑to‑Location Movement)  
-              Move material from one location to another with automatic adjustments to both source and destination.
-              Every movement is validated and recorded in the system history.
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="inventoryOnHand1">Inventory On Hand</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Inventory On‑Hand Module (Summary)</strong><br><br>
+                The Inventory On‑Hand module provides a fast, interactive, and highly visual way to understand real‑time stock levels across the operation. It is designed to behave like a modern spreadsheet—intuitive, responsive, and optimized for high‑volume warehouse environments.<br><br>
 
-              Ship (Material Consumption / Picking)  
-              Remove inventory from a location in real time.
-              The system logs:
+                <strong>Key Capabilities</strong><br><br>
 
-              What was taken
+                <strong>Real‑time quantity tracking</strong><br>
+                Continuously updated on‑hand balances ensure operators always see the most accurate inventory levels.<br><br>
 
-              From which location
+                <strong>Quick Filters & Advanced Filters</strong><br>
+                Users can instantly narrow results using simple quick filters or apply multi‑criteria advanced filters for deeper analysis.<br><br>
 
-              When
+                <strong>Excel‑like Interaction</strong><br>
+                The table supports row selection with full‑row highlighting and active‑cell focus, mimicking the familiar behavior of Microsoft Excel. This makes navigation and data review extremely fast for warehouse teams.<br><br>
 
-              By which user
-              All with strict validation to prevent incorrect part numbers or invalid locations.
+                <strong>Hover Interaction</strong><br>
+                Rows respond visually when the mouse passes over them, improving readability and reducing selection errors.<br><br>
 
-              Receive (Add Inventory)  
-              Add material into a location with real‑time updates and full validation.
-              Ensures that only valid part numbers and valid locations are used.
+                <strong>Export Tools</strong><br>
+                Inventory data can be exported directly to Excel or CSV, enabling offline analysis, reporting, or integration with other systems.<br><br>
 
-              Strict Validation Logic
-              All operations in this module are protected by strong validation rules:
+                <strong>Web Report Integration</strong><br>
+                A built‑in web report allows users to generate structured inventory reports based on different criteria, supporting audits, cycle counts, and operational reviews.<br><br>
 
-              Prevents entering part numbers that do not exist in the system
+                <strong>Data Fields Included</strong><br>
+                The module displays all essential inventory attributes in a single, clean view:<br><br>
 
-              Prevents using locations that are not registered
+                • Part Number<br>
+                • Description<br>
+                • Unit of Measure (U/M)<br>
+                • Monthly Usage<br>
+                • Status<br>
+                • Quantity On Hand<br>
+                • Months of Inventory Available<br>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-              Ensures quantities are correct and consistent
 
-              Blocks invalid or incomplete transactions
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="inventoryOnHand2">Inventario Disponible</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Módulo de Inventario Disponible (Resumen)</strong><br><br>
+                El módulo de Inventario Disponible proporciona una forma rápida, interactiva y altamente visual de comprender los niveles de inventario en tiempo real dentro de la operación. Está diseñado para comportarse como una hoja de cálculo moderna: intuitiva, responsiva y optimizada para entornos de almacén con alto volumen de datos.<br><br>
 
-              This guarantees data integrity and prevents operational mistakes.
+                <strong>Capacidades Principales</strong><br><br>
 
-              Real‑Time History Tracking
-              Every action—ship, receive, sub‑transfer, bulk import, or physical count—automatically writes a detailed record into the system history, ensuring full traceability for audits and operational reviews.</li>
-              
+                <strong>Seguimiento de cantidades en tiempo real</strong><br>
+                Los niveles de inventario se actualizan continuamente, asegurando que los operadores siempre vean la información más precisa.<br><br>
+
+                <strong>Filtros Rápidos y Filtros Avanzados</strong><br>
+                Los usuarios pueden reducir los resultados al instante usando filtros rápidos o aplicar filtros avanzados con múltiples criterios para un análisis más profundo.<br><br>
+
+                <strong>Interacción estilo Excel</strong><br>
+                La tabla permite seleccionar filas con resaltado completo y enfoque en la celda activa, imitando el comportamiento familiar de Microsoft Excel. Esto hace que la navegación y revisión de datos sea extremadamente rápida para los equipos de almacén.<br><br>
+
+                <strong>Interacción Hover</strong><br>
+                Las filas responden visualmente cuando el mouse pasa sobre ellas, mejorando la legibilidad y reduciendo errores de selección.<br><br>
+
+                <strong>Herramientas de Exportación</strong><br>
+                Los datos de inventario pueden exportarse directamente a Excel o CSV, permitiendo análisis fuera de línea, reportes o integración con otros sistemas.<br><br>
+
+                <strong>Integración con Reporte Web</strong><br>
+                Un reporte web integrado permite generar informes estructurados basados en diferentes criterios, apoyando auditorías, conteos cíclicos y revisiones operativas.<br><br>
+
+                <strong>Campos de Datos Incluidos</strong><br>
+                El módulo muestra todos los atributos esenciales del inventario en una vista limpia y unificada:<br><br>
+
+                • Número de Parte<br>
+                • Descripción<br>
+                • Unidad de Medida (U/M)<br>
+                • Uso Mensual<br>
+                • Estatus<br>
+                • Cantidad Disponible<br>
+                • Meses de Inventario Disponible<br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="inventoryOnHand3">库存现有量</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – 库存现有量模块（摘要）</strong><br><br>
+                库存现有量模块提供一种快速、互动且高度可视化的方式，用于了解操作过程中的实时库存水平。该模块的设计类似于现代电子表格——直观、响应迅速，并针对高数据量的仓储环境进行了优化。<br><br>
+
+                <strong>主要功能</strong><br><br>
+
+                <strong>实时数量追踪</strong><br>
+                库存数量会持续更新，确保操作人员始终看到最准确的库存水平。<br><br>
+
+                <strong>快速筛选与高级筛选</strong><br>
+                用户可以使用简单的快速筛选立即缩小结果范围，或使用多条件高级筛选进行更深入的分析。<br><br>
+
+                <strong>类 Excel 交互方式</strong><br>
+                表格支持整行选中、高亮显示以及活动单元格聚焦，模拟 Microsoft Excel 的熟悉操作方式，使仓库团队能够更快速地浏览和审查数据。<br><br>
+
+                <strong>悬停交互</strong><br>
+                当鼠标经过行时，行会产生视觉反馈，提高可读性并减少选择错误。<br><br>
+
+                <strong>导出工具</strong><br>
+                库存数据可直接导出为 Excel 或 CSV，方便离线分析、报告或与其他系统集成。<br><br>
+
+                <strong>网页报表集成</strong><br>
+                内置的网页报表允许用户根据不同条件生成结构化的库存报告，支持审计、循环盘点和运营审查。<br><br>
+
+                <strong>包含的数据字段</strong><br>
+                模块在一个简洁的界面中展示所有关键库存属性：<br><br>
+
+                • 物料编号<br>
+                • 描述<br>
+                • 计量单位 (U/M)<br>
+                • 月使用量<br>
+                • 状态<br>
+                • 现有库存数量<br>
+                • 可用库存月份<br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="inventoryByLocation1">Inventory by Location</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Inventory by Location Module (Summary)</strong><br><br>
+                The Inventory by Location module provides a detailed, real‑time view of stock distribution across every warehouse location. It is designed for operational accuracy, fast navigation, and high‑volume transaction processing, combining spreadsheet‑like usability with strict WMS‑grade validations.<br><br>
+
+                <strong>Key Capabilities</strong><br><br>
+
+                <strong>Quick Filters & Advanced Filters</strong><br>
+                Users can instantly narrow results or apply multi‑criteria filtering to analyze inventory by part, location, status, or any other attribute.<br><br>
+
+                <strong>Excel‑Style Interaction</strong><br>
+                The table behaves like a modern spreadsheet:<br>
+                • Full‑row highlight when selected<br>
+                • Active‑cell highlight showing the exact clicked cell<br>
+                • Smooth hover effects for fast scanning<br>
+                <em>This makes the interface extremely intuitive for warehouse operators.</em><br><br>
+
+                <strong>Export Tools</strong><br>
+                Inventory can be exported to Excel or CSV for reporting, audits, or external analysis.<br><br>
+
+                <strong>Bulk Import Tools</strong><br>
+                • Full inventory replacement during physical counts<br>
+                • Mass inventory adjustments without manual entry<br>
+                <em>These tools dramatically reduce time and eliminate human error during large updates.</em><br><br>
+
+                <strong>Operational Functions (Real‑Time & Validated)</strong><br>
+                This module is not just a table — it is an operational engine. It includes several real‑time inventory actions:<br><br>
+
+                <strong>Sub‑Transfer (Location‑to‑Location Movement)</strong><br>
+                Move material from one location to another with automatic adjustments to both source and destination.<br>
+                Every movement is validated and recorded in the system history.<br><br>
+
+                <strong>Ship (Material Consumption / Picking)</strong><br>
+                Remove inventory from a location in real time.<br>
+                The system logs:<br>
+                • What was taken<br>
+                • From which location<br>
+                • When<br>
+                • By which user<br>
+                All with strict validation to prevent incorrect part numbers or invalid locations.<br><br>
+
+                <strong>Receive (Add Inventory)</strong><br>
+                Add material into a location with real‑time updates and full validation.<br>
+                Ensures that only valid part numbers and valid locations are used.<br><br>
+
+                <strong>Strict Validation Logic</strong><br>
+                All operations in this module are protected by strong validation rules:<br>
+                • Prevents entering part numbers that do not exist in the system<br>
+                • Prevents using locations that are not registered<br>
+                • Ensures quantities are correct and consistent<br>
+                • Blocks invalid or incomplete transactions<br>
+                <em>This guarantees data integrity and prevents operational mistakes.</em><br><br>
+
+                <strong>Real‑Time History Tracking</strong><br>
+                Every action—ship, receive, sub‑transfer, bulk import, or physical count—automatically writes a detailed record into the system history, ensuring full traceability for audits and operational reviews.<br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="inventoryByLocation2">Inventario por Ubicación</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Módulo de Inventario por Ubicación (Resumen)</strong><br><br>
+                El módulo de Inventario por Ubicación proporciona una vista detallada y en tiempo real de la distribución del inventario en cada ubicación del almacén. Está diseñado para ofrecer precisión operativa, navegación rápida y procesamiento de transacciones de alto volumen, combinando la facilidad de uso tipo hoja de cálculo con validaciones estrictas de nivel WMS.<br><br>
+
+                <strong>Capacidades Principales</strong><br><br>
+
+                <strong>Filtros Rápidos y Filtros Avanzados</strong><br>
+                Los usuarios pueden reducir resultados al instante o aplicar filtros avanzados con múltiples criterios para analizar inventario por parte, ubicación, estatus u otros atributos.<br><br>
+
+                <strong>Interacción estilo Excel</strong><br>
+                La tabla se comporta como una hoja de cálculo moderna:<br>
+                • Resaltado de fila completa al seleccionar<br>
+                • Resaltado de celda activa mostrando la celda exacta seleccionada<br>
+                • Efectos suaves de hover para escaneo rápido<br>
+                <em>Esto hace que la interfaz sea extremadamente intuitiva para los operadores de almacén.</em><br><br>
+
+                <strong>Herramientas de Exportación</strong><br>
+                El inventario puede exportarse a Excel o CSV para reportes, auditorías o análisis externos.<br><br>
+
+                <strong>Herramientas de Importación Masiva</strong><br>
+                • Reemplazo total de inventario durante conteos físicos<br>
+                • Ajustes masivos de inventario sin entrada manual<br>
+                <em>Estas herramientas reducen drásticamente el tiempo y eliminan errores humanos durante actualizaciones grandes.</em><br><br>
+
+                <strong>Funciones Operativas (Tiempo Real y Validadas)</strong><br>
+                Este módulo no es solo una tabla — es un motor operativo. Incluye varias acciones de inventario en tiempo real:<br><br>
+
+                <strong>Sub‑Transferencia (Movimiento entre Ubicaciones)</strong><br>
+                Mueve material de una ubicación a otra con ajustes automáticos tanto en origen como destino.<br>
+                Cada movimiento es validado y registrado en el historial del sistema.<br><br>
+
+                <strong>Ship (Consumo / Picking)</strong><br>
+                Remueve inventario de una ubicación en tiempo real.<br>
+                El sistema registra:<br>
+                • Qué se tomó<br>
+                • De qué ubicación<br>
+                • Cuándo<br>
+                • Qué usuario lo realizó<br>
+                Todo con validaciones estrictas para evitar números de parte incorrectos o ubicaciones inválidas.<br><br>
+
+                <strong>Receive (Agregar Inventario)</strong><br>
+                Agrega material a una ubicación con actualizaciones en tiempo real y validación completa.<br>
+                Garantiza que solo se usen números de parte y ubicaciones válidas.<br><br>
+
+                <strong>Lógica de Validación Estricta</strong><br>
+                Todas las operaciones están protegidas por reglas de validación robustas:<br>
+                • Evita ingresar números de parte inexistentes<br>
+                • Evita usar ubicaciones no registradas<br>
+                • Asegura que las cantidades sean correctas y consistentes<br>
+                • Bloquea transacciones inválidas o incompletas<br>
+                <em>Esto garantiza integridad de datos y previene errores operativos.</em><br><br>
+
+                <strong>Historial en Tiempo Real</strong><br>
+                Cada acción — ship, receive, sub‑transfer, importación masiva o conteo físico — escribe automáticamente un registro detallado en el historial del sistema, asegurando trazabilidad completa para auditorías y revisiones operativas.<br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="inventoryByLocation3">按库位库存</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – 按库位库存模块（摘要）</strong><br><br>
+                按库位库存模块提供仓库中每个库位的库存分布的详细实时视图。该模块专为操作精确性、快速导航和高交易量处理而设计，将电子表格式的易用性与严格的 WMS 级验证相结合。<br><br>
+
+                <strong>主要功能</strong><br><br>
+
+                <strong>快速筛选与高级筛选</strong><br>
+                用户可以立即缩小结果范围，或应用多条件筛选以按物料、库位、状态或其他属性分析库存。<br><br>
+
+                <strong>类 Excel 交互方式</strong><br>
+                表格表现如现代电子表格：<br>
+                • 选中时整行高亮<br>
+                • 活动单元格高亮显示精确点击的单元格<br>
+                • 平滑的悬停效果便于快速浏览<br>
+                <em>这使界面对仓库操作员来说非常直观。</em><br><br>
+
+                <strong>导出工具</strong><br>
+                库存可导出为 Excel 或 CSV，用于报告、审计或外部分析。<br><br>
+
+                <strong>批量导入工具</strong><br>
+                • 盘点期间的库存全量替换<br>
+                • 无需手动输入的大规模库存调整<br>
+                <em>这些工具大幅减少时间并消除大型更新中的人为错误。</em><br><br>
+
+                <strong>操作功能（实时且验证）</strong><br>
+                该模块不仅是一张表格——它是一个操作引擎，包含多项实时库存操作：<br><br>
+
+                <strong>库位间转移（Sub‑Transfer）</strong><br>
+                将物料从一个库位移动到另一个库位，并自动调整源库位和目标库位的数量。<br>
+                每次移动都会经过验证并记录在系统历史中。<br><br>
+
+                <strong>Ship（消耗 / 拣货）</strong><br>
+                实时从库位移除库存。<br>
+                系统记录：<br>
+                • 移除的物料<br>
+                • 来源库位<br>
+                • 时间<br>
+                • 操作用户<br>
+                并通过严格验证防止错误物料编号或无效库位。<br><br>
+
+                <strong>Receive（新增库存）</strong><br>
+                将物料添加到库位，并进行实时更新与完整验证。<br>
+                确保仅使用有效的物料编号和库位。<br><br>
+
+                <strong>严格的验证逻辑</strong><br>
+                所有操作均受强验证规则保护：<br>
+                • 防止输入系统中不存在的物料编号<br>
+                • 防止使用未注册的库位<br>
+                • 确保数量正确且一致<br>
+                • 阻止无效或不完整的交易<br>
+                <em>这确保数据完整性并防止操作错误。</em><br><br>
+
+                <strong>实时历史记录</strong><br>
+                每个操作——ship、receive、sub‑transfer、批量导入或盘点——都会自动写入系统历史，确保审计和运营审查的完整可追溯性。<br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="itemLocationTable1">Item & Location Table</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Item List & Location List Modules (Summary)</strong><br><br>
+                The Item List and Location List modules form the core master‑data foundation of the ICS WMS. Every validation, every transaction, and every inventory movement depends on the accuracy and integrity of these two tables. Without them, the system cannot guarantee consistency, correctness, or traceability.<br><br>
+
+                <strong>Why These Tables Matter</strong><br>
+                These modules define the official catalog of products and warehouse locations.<br>
+                They ensure that:<br>
+                • Only valid part numbers can be received, shipped, transferred, or adjusted<br>
+                • Only registered and active locations can be used in operations<br>
+                • All inventory activity is tied to clean, controlled master data<br>
+                • The system remains consistent and auditable across all modules<br><br>
+                They are the “source of truth” for the entire WMS.<br><br>
+
+                <strong>Item List – Key Capabilities</strong><br>
+                The Item List stores all essential product attributes required for inventory control and reporting:<br><br>
+                • Part Number<br>
+                • Product Description<br>
+                • Unit of Measure (U/M)<br>
+                • Monthly Usage<br>
+                • Status (Active / Inactive)<br><br>
+
+                The status field is especially important:<br>
+                <em>Inactive items remain in the system for historical reference, ensuring past transactions remain traceable while preventing new activity on discontinued parts.</em><br><br>
+
+                <strong>Functional Features</strong><br>
+                • Quick Filters & Advanced Filters<br>
+                • Bulk Import of Items (avoid manual entry)<br>
+                • Export to Excel / CSV<br>
+                • Excel‑style row selection<br>
+                • Full‑row highlight<br>
+                • Active‑cell highlight<br>
+                • Hover interaction for fast scanning<br><br>
+
+                These features make the Item List fast, intuitive, and easy to maintain even with thousands of SKUs.<br><br>
+
+                <strong>Location List – Key Capabilities</strong><br>
+                The Location List defines every valid storage location in the warehouse.<br>
+                Each location includes:<br><br>
+                • Location Code<br>
+                • Status (Active / Inactive)<br><br>
+
+                Inactive locations remain available for historical reference, ensuring past movements remain valid while preventing new transactions in obsolete areas.<br><br>
+
+                <strong>Functional Features</strong><br>
+                • Quick Filters & Advanced Filters<br>
+                • Bulk Import of Locations<br>
+                • Export to Excel / CSV<br>
+                • Excel‑style interaction<br>
+                • Full‑row highlight<br>
+                • Active‑cell highlight<br>
+                • Hover effects for improved readability<br><br>
+
+                These tools make it easy to maintain a clean, accurate location structure — essential for all receiving, picking, transfers, and cycle counts.<br><br>
+
+                <strong>Why These Modules Are Critical</strong><br>
+                Together, the Item List and Location List ensure:<br>
+                • Strict validation across all operational modules<br>
+                • Error‑free receiving, shipping, and transfers<br>
+                • Consistent inventory history<br>
+                • Accurate reporting and KPIs<br>
+                • A stable foundation for all real‑time transactions<br><br>
+
+                They are not just reference tables — <em>they are the backbone of the entire ICS WMS.</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="itemLocationTable2">Tabla de Artículos y Ubicaciones</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Módulos de Lista de Artículos y Lista de Ubicaciones (Resumen)</strong><br><br>
+                Los módulos de Lista de Artículos y Lista de Ubicaciones forman la base principal de datos maestros del WMS de ICS. Cada validación, cada transacción y cada movimiento de inventario depende de la precisión e integridad de estas dos tablas. Sin ellas, el sistema no puede garantizar consistencia, exactitud ni trazabilidad.<br><br>
+
+                <strong>Por qué estas tablas son importantes</strong><br>
+                Estos módulos definen el catálogo oficial de productos y las ubicaciones del almacén.<br>
+                Garantizan que:<br>
+                • Solo números de parte válidos puedan recibirse, enviarse, transferirse o ajustarse<br>
+                • Solo ubicaciones registradas y activas puedan usarse en operaciones<br>
+                • Toda actividad de inventario esté vinculada a datos maestros limpios y controlados<br>
+                • El sistema se mantenga consistente y auditable en todos los módulos<br><br>
+                Son la “fuente de verdad” de todo el WMS.<br><br>
+
+                <strong>Lista de Artículos – Capacidades Clave</strong><br>
+                La Lista de Artículos almacena todos los atributos esenciales requeridos para el control y reporte de inventario:<br><br>
+                • Número de Parte<br>
+                • Descripción del Producto<br>
+                • Unidad de Medida (U/M)<br>
+                • Uso Mensual<br>
+                • Estatus (Activo / Inactivo)<br><br>
+
+                El campo de estatus es especialmente importante:<br>
+                <em>Los artículos inactivos permanecen en el sistema para referencia histórica, asegurando que transacciones pasadas sigan siendo trazables mientras se evita actividad nueva en partes descontinuadas.</em><br><br>
+
+                <strong>Funciones Principales</strong><br>
+                • Filtros Rápidos y Filtros Avanzados<br>
+                • Importación Masiva de Artículos (evita entrada manual)<br>
+                • Exportación a Excel / CSV<br>
+                • Selección estilo Excel<br>
+                • Resaltado de fila completa<br>
+                • Resaltado de celda activa<br>
+                • Interacción hover para escaneo rápido<br><br>
+
+                Estas funciones hacen que la Lista de Artículos sea rápida, intuitiva y fácil de mantener incluso con miles de SKUs.<br><br>
+
+                <strong>Lista de Ubicaciones – Capacidades Clave</strong><br>
+                La Lista de Ubicaciones define cada ubicación válida del almacén.<br>
+                Cada ubicación incluye:<br><br>
+                • Código de Ubicación<br>
+                • Estatus (Activo / Inactivo)<br><br>
+
+                Las ubicaciones inactivas permanecen disponibles para referencia histórica, asegurando que movimientos pasados sigan siendo válidos mientras se evita actividad nueva en áreas obsoletas.<br><br>
+
+                <strong>Funciones Principales</strong><br>
+                • Filtros Rápidos y Filtros Avanzados<br>
+                • Importación Masiva de Ubicaciones<br>
+                • Exportación a Excel / CSV<br>
+                • Interacción estilo Excel<br>
+                • Resaltado de fila completa<br>
+                • Resaltado de celda activa<br>
+                • Efectos hover para mejorar la legibilidad<br><br>
+
+                Estas herramientas facilitan mantener una estructura de ubicaciones limpia y precisa — esencial para recepción, picking, transferencias y conteos cíclicos.<br><br>
+
+                <strong>Por qué estos módulos son críticos</strong><br>
+                Juntos, la Lista de Artículos y la Lista de Ubicaciones garantizan:<br>
+                • Validación estricta en todos los módulos operativos<br>
+                • Recepción, envíos y transferencias sin errores<br>
+                • Historial de inventario consistente<br>
+                • Reportes y KPIs precisos<br>
+                • Una base estable para todas las transacciones en tiempo real<br><br>
+
+                No son solo tablas de referencia — <em>son la columna vertebral de todo el WMS de ICS.</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="itemLocationTable3">物品与库位表</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – 物料清单与库位清单模块（摘要）</strong><br><br>
+                物料清单和库位清单模块构成 ICS WMS 的核心主数据基础。每一次验证、每一笔交易、每一次库存移动都依赖于这两张表的准确性和完整性。没有它们，系统无法保证一致性、正确性或可追溯性。<br><br>
+
+                <strong>这些表为何重要</strong><br>
+                这些模块定义了仓库的官方产品目录和库位结构。<br>
+                它们确保：<br>
+                • 只有有效的物料编号才能被接收、发货、转移或调整<br>
+                • 只有已注册且处于激活状态的库位才能用于操作<br>
+                • 所有库存活动都与干净、受控的主数据关联<br>
+                • 系统在所有模块中保持一致且可审计<br><br>
+                它们是整个 WMS 的“真实来源”。<br><br>
+
+                <strong>物料清单 – 关键功能</strong><br>
+                物料清单存储库存控制和报告所需的所有关键产品属性：<br><br>
+                • 物料编号<br>
+                • 产品描述<br>
+                • 计量单位 (U/M)<br>
+                • 月使用量<br>
+                • 状态（激活 / 未激活）<br><br>
+
+                状态字段尤为重要：<br>
+                <em>未激活的物料仍保留在系统中用于历史参考，确保过去的交易可追溯，同时防止对已停用物料进行新的操作。</em><br><br>
+
+                <strong>功能特性</strong><br>
+                • 快速筛选与高级筛选<br>
+                • 批量导入物料（避免手动输入）<br>
+                • 导出至 Excel / CSV<br>
+                • 类 Excel 行选择<br>
+                • 整行高亮<br>
+                • 活动单元格高亮<br>
+                • 悬停交互以便快速浏览<br><br>
+
+                这些功能使物料清单即使在拥有数千个 SKU 时仍然快速、直观且易于维护。<br><br>
+
+                <strong>库位清单 – 关键功能</strong><br>
+                库位清单定义仓库中的每一个有效库位。<br>
+                每个库位包含：<br><br>
+                • 库位代码<br>
+                • 状态（激活 / 未激活）<br><br>
+
+                未激活的库位仍保留用于历史参考，确保过去的移动记录有效，同时防止在过时区域进行新的操作。<br><br>
+
+                <strong>功能特性</strong><br>
+                • 快速筛选与高级筛选<br>
+                • 批量导入库位<br>
+                • 导出至 Excel / CSV<br>
+                • 类 Excel 交互方式<br>
+                • 整行高亮<br>
+                • 活动单元格高亮<br>
+                • 悬停效果以提升可读性<br><br>
+
+                这些工具使维护干净、准确的库位结构变得容易——这是所有收货、拣货、转移和盘点操作的基础。<br><br>
+
+                <strong>这些模块为何至关重要</strong><br>
+                物料清单与库位清单共同确保：<br>
+                • 所有操作模块中的严格验证<br>
+                • 无错误的收货、发货和转移<br>
+                • 一致的库存历史<br>
+                • 准确的报告与 KPI<br>
+                • 所有实时交易的稳定基础<br><br>
+
+                它们不仅是参考表 —— <em>它们是整个 ICS WMS 的支柱。</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="purchaseOrders1">Purchase Orders</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Purchase Orders Module (Summary)</strong><br><br>
+                The Purchase Orders module provides a complete, structured, and highly interactive way to manage inbound orders. It combines spreadsheet‑like usability with strict validation logic and real‑time receiving controls, ensuring that every PO is processed accurately and consistently.<br><br>
+
+                <strong>Key Capabilities</strong><br><br>
+
+                <strong>Quick Filters & Advanced Filters</strong><br>
+                Users can instantly narrow down POs or apply multi‑criteria filtering to analyze orders by part number, supplier, status, or date.<br><br>
+
+                <strong>Bulk Import & Template Generation</strong><br>
+                • Import all Purchase Orders at once<br>
+                • Generate a standardized template to ensure consistent formatting<br>
+                <em>Prevents manual entry errors and accelerates onboarding of large PO batches.</em><br><br>
+
+                <strong>Manual PO Entry</strong><br>
+                Users can also create POs one by one by entering:<br>
+                • Part Number<br>
+                • PO Number<br>
+                • Ordered Quantity<br>
+                • Supplier<br>
+                • Ordered Date (auto‑generated)<br>
+                <em>This flexibility supports both automated and manual workflows.</em><br><br>
+
+                <strong>Excel‑Style Interaction</strong><br>
+                Just like the other ICS tables, the Purchase Orders module includes:<br>
+                • Full‑row highlight when a row is selected<br>
+                • Active‑cell highlight showing the exact clicked cell<br>
+                • Hover effects for fast scanning and improved readability<br>
+                <em>This makes the table feel familiar and intuitive, especially for users accustomed to Excel.</em><br><br>
+
+                <strong>PO Status Logic (Real‑Time & Color‑Coded)</strong><br>
+                One of the most elegant features of this module is its dynamic status system, which updates automatically based on receiving activity:<br><br>
+
+                <strong>Ordered</strong><br>
+                • Default state when the PO is created<br>
+                • Displayed with its own color for quick identification<br><br>
+
+                <strong>Partial</strong><br>
+                • Triggered when the received quantity is less than the ordered quantity<br>
+                • Helps operators instantly identify incomplete receipts<br><br>
+
+                <strong>Allocated / Completed</strong><br>
+                • Triggered when the full quantity has been received<br>
+                • Highlighted in green to indicate completion<br><br>
+
+                <strong>Strict Receiving Validation</strong><br>
+                The system enforces strong validation rules to maintain data integrity:<br>
+                • Prevents receiving more than the ordered quantity<br>
+                • If a user attempts to receive again, the system only allows the remaining quantity<br>
+                • Blocks invalid part numbers<br>
+                • Blocks invalid or inactive suppliers<br>
+                • Ensures all receiving activity is consistent with the PO<br>
+                <em>This prevents over‑receiving, duplicate receipts, and incorrect data entry.</em><br><br>
+
+                <strong>Data Fields Included</strong><br>
+                The Purchase Orders table displays all essential inbound order information:<br><br>
+                • Part Number<br>
+                • PO Number<br>
+                • Ordered Quantity<br>
+                • Ordered Date<br>
+                • Ordered By<br>
+                • Supplier<br>
+                • Status<br>
+                • Received Date<br>
+                • Received By<br>
+                • Received Quantity<br><br>
+
+                <strong>Real‑Time Updates & History Tracking</strong><br>
+                Every receiving action updates the PO in real time and writes a detailed record to the system history, ensuring full traceability for audits and operational reviews.<br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="purchaseOrders2">Órdenes de Compra</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Módulo de Órdenes de Compra (Resumen)</strong><br><br>
+                El módulo de Órdenes de Compra proporciona una forma completa, estructurada y altamente interactiva de gestionar órdenes entrantes. Combina la facilidad de uso tipo hoja de cálculo con lógica de validación estricta y controles de recepción en tiempo real, garantizando que cada OC sea procesada de manera precisa y consistente.<br><br>
+
+                <strong>Capacidades Principales</strong><br><br>
+
+                <strong>Filtros Rápidos y Filtros Avanzados</strong><br>
+                Los usuarios pueden reducir instantáneamente las OCs o aplicar filtros avanzados con múltiples criterios para analizarlas por número de parte, proveedor, estatus o fecha.<br><br>
+
+                <strong>Importación Masiva y Generación de Plantillas</strong><br>
+                • Importar todas las Órdenes de Compra de una sola vez<br>
+                • Generar una plantilla estandarizada para asegurar formato consistente<br>
+                <em>Evita errores de captura manual y acelera la carga de grandes lotes de OCs.</em><br><br>
+
+                <strong>Entrada Manual de OCs</strong><br>
+                Los usuarios también pueden crear OCs una por una ingresando:<br>
+                • Número de Parte<br>
+                • Número de OC<br>
+                • Cantidad Ordenada<br>
+                • Proveedor<br>
+                • Fecha de Orden (generada automáticamente)<br>
+                <em>Esta flexibilidad soporta flujos de trabajo automáticos y manuales.</em><br><br>
+
+                <strong>Interacción estilo Excel</strong><br>
+                Igual que las demás tablas de ICS, el módulo incluye:<br>
+                • Resaltado de fila completa al seleccionar<br>
+                • Resaltado de celda activa<br>
+                • Efectos hover para escaneo rápido y mejor legibilidad<br>
+                <em>Hace que la tabla sea intuitiva, especialmente para usuarios acostumbrados a Excel.</em><br><br>
+
+                <strong>Lógica de Estatus de OC (Tiempo Real y con Colores)</strong><br>
+                Una de las funciones más elegantes del módulo es su sistema dinámico de estatus, que se actualiza automáticamente según la actividad de recepción:<br><br>
+
+                <strong>Ordered</strong><br>
+                • Estado por defecto al crear la OC<br>
+                • Se muestra con su propio color para identificación rápida<br><br>
+
+                <strong>Partial</strong><br>
+                • Se activa cuando la cantidad recibida es menor a la ordenada<br>
+                • Ayuda a identificar recibos incompletos al instante<br><br>
+
+                <strong>Allocated / Completed</strong><br>
+                • Se activa cuando se recibe la cantidad total<br>
+                • Se resalta en verde para indicar finalización<br><br>
+
+                <strong>Validación Estricta de Recepciones</strong><br>
+                El sistema aplica reglas fuertes de validación para mantener integridad de datos:<br>
+                • Evita recibir más de lo ordenado<br>
+                • Si se intenta recibir nuevamente, solo permite la cantidad restante<br>
+                • Bloquea números de parte inválidos<br>
+                • Bloquea proveedores inválidos o inactivos<br>
+                • Asegura que toda recepción sea consistente con la OC<br>
+                <em>Previene sobre‑recepciones, duplicados y errores de captura.</em><br><br>
+
+                <strong>Campos Incluidos</strong><br>
+                La tabla de Órdenes de Compra muestra toda la información esencial:<br><br>
+                • Número de Parte<br>
+                • Número de OC<br>
+                • Cantidad Ordenada<br>
+                • Fecha de Orden<br>
+                • Ordenado Por<br>
+                • Proveedor<br>
+                • Estatus<br>
+                • Fecha de Recepción<br>
+                • Recibido Por<br>
+                • Cantidad Recibida<br><br>
+
+                <strong>Actualizaciones en Tiempo Real y Registro Histórico</strong><br>
+                Cada acción de recepción actualiza la OC en tiempo real y escribe un registro detallado en el historial del sistema, asegurando trazabilidad completa para auditorías y revisiones operativas.<br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="purchaseOrders3">采购订单</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – 采购订单模块（摘要）</strong><br><br>
+                采购订单模块提供一种完整、结构化且高度互动的方式来管理入库订单。它结合了电子表格式的易用性、严格的验证逻辑以及实时收货控制，确保每一张采购订单都能被准确且一致地处理。<br><br>
+
+                <strong>主要功能</strong><br><br>
+
+                <strong>快速筛选与高级筛选</strong><br>
+                用户可以立即缩小采购订单范围，或使用多条件筛选按物料编号、供应商、状态或日期进行分析。<br><br>
+
+                <strong>批量导入与模板生成</strong><br>
+                • 一次性导入所有采购订单<br>
+                • 生成标准化模板以确保一致的格式<br>
+                <em>避免手动输入错误，加速大量采购订单的导入流程。</em><br><br>
+
+                <strong>手动录入采购订单</strong><br>
+                用户也可以逐条创建采购订单，输入：<br>
+                • 物料编号<br>
+                • 采购订单号<br>
+                • 订购数量<br>
+                • 供应商<br>
+                • 订购日期（自动生成）<br>
+                <em>这种灵活性支持自动化与手动流程。</em><br><br>
+
+                <strong>类 Excel 交互方式</strong><br>
+                与 ICS 的其他表格一样，该模块包括：<br>
+                • 选中时整行高亮<br>
+                • 活动单元格高亮显示点击的确切位置<br>
+                • 悬停效果便于快速浏览与提高可读性<br>
+                <em>让界面对熟悉 Excel 的用户来说非常直观。</em><br><br>
+
+                <strong>采购订单状态逻辑（实时且颜色标识）</strong><br>
+                该模块最优雅的功能之一是其动态状态系统，会根据收货活动自动更新：<br><br>
+
+                <strong>Ordered（已下单）</strong><br>
+                • 创建采购订单时的默认状态<br>
+                • 使用独特颜色显示以便快速识别<br><br>
+
+                <strong>Partial（部分收货）</strong><br>
+                • 当收货数量小于订购数量时触发<br>
+                • 帮助操作员快速识别未完成的收货<br><br>
+
+                <strong>Allocated / Completed（已完成）</strong><br>
+                • 当全部数量收货完成时触发<br>
+                • 使用绿色高亮以表示完成<br><br>
+
+                <strong>严格的收货验证</strong><br>
+                系统通过强验证规则确保数据完整性：<br>
+                • 防止收货数量超过订购数量<br>
+                • 若再次收货，仅允许剩余数量<br>
+                • 阻止无效物料编号<br>
+                • 阻止无效或未激活的供应商<br>
+                • 确保所有收货活动与采购订单一致<br>
+                <em>防止超收、重复收货和错误录入。</em><br><br>
+
+                <strong>包含的数据字段</strong><br>
+                采购订单表显示所有关键入库信息：<br><br>
+                • 物料编号<br>
+                • 采购订单号<br>
+                • 订购数量<br>
+                • 订购日期<br>
+                • 下单人<br>
+                • 供应商<br>
+                • 状态<br>
+                • 收货日期<br>
+                • 收货人<br>
+                • 收货数量<br><br>
+
+                <strong>实时更新与历史记录</strong><br>
+                每一次收货都会实时更新采购订单，并写入系统历史记录，确保审计与运营审查的完整可追溯性。<br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="orderRequestTable1">Order Request Table</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Order Request Module (Summary)</strong><br><br>
+                The Order Request module manages internal material requests submitted by different departments within the operation. It provides a structured, traceable, and highly interactive workflow for creating, reviewing, fulfilling, and auditing internal orders. Like the other ICS tables, it combines spreadsheet‑style usability with strict validation and real‑time updates.<br><br>
+
+                <strong>Key Capabilities</strong><br><br>
+
+                <strong>Quick Filters & Advanced Filters</strong><br>
+                Users can instantly filter by order number, department, part number, status, date, or any other field.<br>
+                Advanced filters allow multi‑criteria searches for deeper operational analysis.<br><br>
+
+                <strong>Export & History Management</strong><br>
+                • Export all order requests to Excel or CSV<br>
+                • Clear historical records when needed (with controlled access)<br>
+                <em>Maintain clean, organized data for audits and reporting.</em><br><br>
+
+                <strong>Modal‑Based Order Creation</strong><br>
+                A clean, guided modal allows users to create new internal orders by entering:<br>
+                • Part Number<br>
+                • Department<br>
+                • Required Quantity<br>
+                • Required Date & Time<br>
+                • Ordered By<br>
+                <em>This ensures consistency and reduces data entry errors.</em><br><br>
+
+                <strong>Excel‑Style Interaction</strong><br>
+                Just like the other ICS tables, the Order Request module includes:<br>
+                • Full‑row highlight when a row is selected<br>
+                • Active‑cell highlight showing the exact clicked cell<br>
+                • Hover effects for fast scanning and improved readability<br>
+                <em>This makes the table intuitive and efficient for daily use.</em><br><br>
+
+                <strong>Data Fields Included</strong><br>
+                The module displays all relevant information for tracking and fulfilling internal orders:<br><br>
+                • Order Number<br>
+                • Department<br>
+                • Part Number<br>
+                • Requested Quantity<br>
+                • Requested Date<br>
+                • Requested Time<br>
+                • Ordered By<br>
+                • Status<br>
+                • Completed By<br>
+                • Completed Date<br>
+                • Completed Time<br>
+                • Actual Quantity Pulled<br><br>
+
+                <strong>Status Logic & Workflow Tracking</strong><br>
+                The system automatically updates the order status based on operational activity:<br><br>
+                • <strong>Ordered</strong> – when the request is first created<br>
+                • <strong>In Progress</strong> – when the order is being fulfilled<br>
+                • <strong>Completed</strong> – when the requested quantity has been pulled<br>
+                • <strong>Partially Completed</strong> – when only part of the quantity was fulfilled<br><br>
+                Each status is color‑coded for fast visual recognition, making it easy for operators and supervisors to understand the state of every request at a glance.<br><br>
+
+                <strong>Strict Validation & Real‑Time Updates</strong><br>
+                The module enforces strong validation rules to maintain data integrity:<br>
+                • Prevents entering invalid part numbers<br>
+                • Prevents using inactive or invalid departments<br>
+                • Ensures quantities and dates are correct<br>
+                • Updates the table in real time as orders are fulfilled<br>
+                • Writes every action to the system history for full traceability<br><br>
+
+                <em>This ensures that every internal order is accurate, auditable, and consistent with the rest of the WMS.</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="orderRequestTable2">Tabla de Solicitudes</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Módulo de Solicitudes de Orden (Resumen)</strong><br><br>
+                El módulo de Solicitudes de Orden gestiona las solicitudes internas de material enviadas por diferentes departamentos dentro de la operación. Proporciona un flujo de trabajo estructurado, trazable y altamente interactivo para crear, revisar, completar y auditar solicitudes internas. Al igual que las demás tablas de ICS, combina facilidad de uso tipo hoja de cálculo con validación estricta y actualizaciones en tiempo real.<br><br>
+
+                <strong>Capacidades Principales</strong><br><br>
+
+                <strong>Filtros Rápidos y Filtros Avanzados</strong><br>
+                Los usuarios pueden filtrar instantáneamente por número de orden, departamento, número de parte, estatus, fecha o cualquier otro campo.<br>
+                Los filtros avanzados permiten búsquedas con múltiples criterios para análisis operativos más profundos.<br><br>
+
+                <strong>Exportación y Gestión de Historial</strong><br>
+                • Exportar todas las solicitudes a Excel o CSV<br>
+                • Limpiar el historial cuando sea necesario (con acceso controlado)<br>
+                <em>Mantiene datos limpios y organizados para auditorías y reportes.</em><br><br>
+
+                <strong>Creación de Solicitudes mediante Modal</strong><br>
+                Un modal limpio y guiado permite crear nuevas solicitudes internas ingresando:<br>
+                • Número de Parte<br>
+                • Departamento<br>
+                • Cantidad Requerida<br>
+                • Fecha y Hora Requerida<br>
+                • Solicitado Por<br>
+                <em>Esto asegura consistencia y reduce errores de captura.</em><br><br>
+
+                <strong>Interacción estilo Excel</strong><br>
+                Igual que las demás tablas ICS, el módulo incluye:<br>
+                • Resaltado de fila completa al seleccionar<br>
+                • Resaltado de celda activa<br>
+                • Efectos hover para escaneo rápido y mejor legibilidad<br>
+                <em>Hace la tabla intuitiva y eficiente para el uso diario.</em><br><br>
+
+                <strong>Campos Incluidos</strong><br>
+                El módulo muestra toda la información relevante para rastrear y completar solicitudes internas:<br><br>
+                • Número de Orden<br>
+                • Departamento<br>
+                • Número de Parte<br>
+                • Cantidad Solicitada<br>
+                • Fecha Solicitada<br>
+                • Hora Solicitada<br>
+                • Solicitado Por<br>
+                • Estatus<br>
+                • Completado Por<br>
+                • Fecha de Completado<br>
+                • Hora de Completado<br>
+                • Cantidad Real Extraída<br><br>
+
+                <strong>Lógica de Estatus y Seguimiento del Flujo</strong><br>
+                El sistema actualiza automáticamente el estatus de la solicitud según la actividad operativa:<br><br>
+                • <strong>Ordered</strong> – cuando la solicitud es creada<br>
+                • <strong>In Progress</strong> – cuando la solicitud está siendo atendida<br>
+                • <strong>Completed</strong> – cuando la cantidad solicitada ha sido extraída<br>
+                • <strong>Partially Completed</strong> – cuando solo parte de la cantidad fue extraída<br><br>
+                Cada estatus tiene un color asignado para reconocimiento visual rápido, facilitando que operadores y supervisores entiendan el estado de cada solicitud de un vistazo.<br><br>
+
+                <strong>Validación Estricta y Actualizaciones en Tiempo Real</strong><br>
+                El módulo aplica reglas estrictas de validación para mantener integridad de datos:<br>
+                • Evita ingresar números de parte inválidos<br>
+                • Evita usar departamentos inactivos o inválidos<br>
+                • Asegura que cantidades y fechas sean correctas<br>
+                • Actualiza la tabla en tiempo real conforme se completan solicitudes<br>
+                • Registra cada acción en el historial del sistema para trazabilidad completa<br><br>
+
+                <em>Esto garantiza que cada solicitud interna sea precisa, auditable y consistente con el resto del WMS.</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="orderRequestTable3">申请单表</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – 内部申请单模块（摘要）</strong><br><br>
+                内部申请单模块用于管理由不同部门提交的物料申请。它提供结构化、可追踪且高度互动的工作流程，用于创建、审核、完成和审计内部订单。与其他 ICS 表格一样，它结合了电子表格式的易用性、严格的验证逻辑以及实时更新能力。<br><br>
+
+                <strong>主要功能</strong><br><br>
+
+                <strong>快速筛选与高级筛选</strong><br>
+                用户可以按订单号、部门、物料编号、状态、日期等字段即时筛选。<br>
+                高级筛选允许多条件组合查询，以进行更深入的运营分析。<br><br>
+
+                <strong>导出与历史记录管理</strong><br>
+                • 将所有申请单导出为 Excel 或 CSV<br>
+                • 在需要时清理历史记录（受控权限）<br>
+                <em>保持数据整洁、有序，便于审计与报告。</em><br><br>
+
+                <strong>基于 Modal 的申请创建</strong><br>
+                一个简洁的引导式 modal 允许用户创建新的内部申请，输入：<br>
+                • 物料编号<br>
+                • 部门<br>
+                • 需求数量<br>
+                • 需求日期与时间<br>
+                • 申请人<br>
+                <em>确保一致性并减少输入错误。</em><br><br>
+
+                <strong>类 Excel 交互方式</strong><br>
+                与 ICS 其他表格一致，本模块包括：<br>
+                • 选中时整行高亮<br>
+                • 活动单元格高亮显示点击的确切位置<br>
+                • 悬停效果便于快速浏览与提高可读性<br>
+                <em>使界面直观且高效，适合日常使用。</em><br><br>
+
+                <strong>包含的数据字段</strong><br>
+                模块显示所有用于跟踪和完成内部申请的相关信息：<br><br>
+                • 订单号<br>
+                • 部门<br>
+                • 物料编号<br>
+                • 需求数量<br>
+                • 需求日期<br>
+                • 需求时间<br>
+                • 申请人<br>
+                • 状态<br>
+                • 完成者<br>
+                • 完成日期<br>
+                • 完成时间<br>
+                • 实际提取数量<br><br>
+
+                <strong>状态逻辑与流程跟踪</strong><br>
+                系统会根据操作活动自动更新申请状态：<br><br>
+                • <strong>Ordered</strong> – 创建申请时<br>
+                • <strong>In Progress</strong> – 申请正在处理时<br>
+                • <strong>Completed</strong> – 所需数量全部提取时<br>
+                • <strong>Partially Completed</strong> – 仅部分数量被提取时<br><br>
+                每个状态都有颜色标识，便于操作员和主管快速识别申请进度。<br><br>
+
+                <strong>严格验证与实时更新</strong><br>
+                模块通过强验证规则确保数据完整性：<br>
+                • 防止输入无效物料编号<br>
+                • 防止使用无效或未激活的部门<br>
+                • 确保数量与日期正确<br>
+                • 在申请完成时实时更新表格<br>
+                • 所有操作都会写入系统历史记录，确保完整可追溯性<br><br>
+
+                <em>这确保每一张内部申请都准确、可审计，并与整个 WMS 保持一致。</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="historyTable1">History Table</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Inventory History Module (Summary)</strong><br><br>
+                The Inventory History module is the central audit trail of the ICS WMS. Every movement, adjustment, transaction, and operational action flows into this table. It provides complete visibility into why inventory increased, decreased, moved, or changed status — making it the most critical module for audits, investigations, and operational accuracy.<br><br>
+
+                <strong>Purpose & Importance</strong><br>
+                This module records every single event that affects inventory, including:<br>
+                • Additions (receiving, put‑away, inbound)<br>
+                • Subtractions (shipping, picking, consumption)<br>
+                • Transfers between locations<br>
+                • Manual adjustments<br>
+                • Order Requests<br>
+                • Bulk imports<br>
+                • Physical counts<br>
+                • Any system‑generated correction<br><br>
+
+                Because it captures the full lifecycle of inventory activity, it allows supervisors, auditors, and managers to answer essential questions:<br>
+                • Why did inventory go down?<br>
+                • Why did inventory go up?<br>
+                • Who performed the action?<br>
+                • When did it happen?<br>
+                • Where was the material moved from and to?<br>
+                • What type of transaction caused the change?<br><br>
+
+                <em>This module is the foundation of traceability, accountability, and operational transparency.</em><br><br>
+
+                <strong>Data Fields Included</strong><br>
+                The History table stores all relevant details for every transaction:<br><br>
+                • Part Number<br>
+                • Location(s) involved<br>
+                • Quantity Change (positive or negative)<br>
+                • Timestamp (exact date and time of the event)<br>
+                • Period (if applicable to the inventory cycle)<br>
+                • Transaction Type:<br>
+                &nbsp;&nbsp;– Put Away<br>
+                &nbsp;&nbsp;– Inbound<br>
+                &nbsp;&nbsp;– Manual Adjustment<br>
+                &nbsp;&nbsp;– Order Request<br>
+                &nbsp;&nbsp;– Sub‑Transfer<br>
+                &nbsp;&nbsp;– Ship<br>
+                &nbsp;&nbsp;– Receive<br>
+                &nbsp;&nbsp;– And more<br>
+                • Executed By (the user who performed the action)<br>
+                • Notes<br>
+                • Order Request number<br>
+                • Put‑away PIN<br>
+                • Additional context or references<br><br>
+
+                <em>This level of detail ensures that every movement is fully documented and easy to trace.</em><br><br>
+
+                <strong>Functional Features</strong><br>
+                Just like the other ICS tables, the History module includes:<br><br>
+
+                <strong>Quick Filters & Advanced Filters</strong><br>
+                Instantly narrow down thousands of records by part number, type, user, date, or any other field.<br><br>
+
+                <strong>Excel‑Style Interaction</strong><br>
+                • Full‑row highlight<br>
+                • Active‑cell highlight<br>
+                • Smooth hover effects<br><br>
+
+                <strong>Export Tools</strong><br>
+                Export the entire history or filtered results to Excel or CSV for audits, reporting, or external analysis.<br><br>
+
+                <em>These features make it easy to navigate large volumes of historical data with speed and precision.</em><br><br>
+
+                <strong>Why This Module Is Critical</strong><br>
+                The History module is the single source of truth for:<br>
+                • Audits<br>
+                • Investigations<br>
+                • Inventory discrepancies<br>
+                • Cycle counts<br>
+                • Supervisor reviews<br>
+                • Compliance<br>
+                • Root‑cause analysis<br><br>
+
+                <em>It ensures that ICS is not just a real‑time WMS, but a fully traceable and accountable system where every action is recorded, validated, and preserved.</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="historyTable2">Historial de Movimientos</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Módulo de Historial de Inventario (Resumen)</strong><br><br>
+                El módulo de Historial de Inventario es la pista de auditoría central del WMS de ICS. Cada movimiento, ajuste, transacción y acción operativa fluye hacia esta tabla. Proporciona visibilidad completa sobre por qué el inventario aumentó, disminuyó, se movió o cambió de estatus — convirtiéndolo en el módulo más crítico para auditorías, investigaciones y precisión operativa.<br><br>
+
+                <strong>Propósito e Importancia</strong><br>
+                Este módulo registra cada evento que afecta el inventario, incluyendo:<br>
+                • Adiciones (recepción, put‑away, inbound)<br>
+                • Sustracciones (shipping, picking, consumo)<br>
+                • Transferencias entre ubicaciones<br>
+                • Ajustes manuales<br>
+                • Solicitudes de Orden<br>
+                • Importaciones masivas<br>
+                • Conteos físicos<br>
+                • Cualquier corrección generada por el sistema<br><br>
+
+                Debido a que captura el ciclo completo de actividad del inventario, permite a supervisores, auditores y gerentes responder preguntas esenciales:<br>
+                • ¿Por qué bajó el inventario?<br>
+                • ¿Por qué subió el inventario?<br>
+                • ¿Quién realizó la acción?<br>
+                • ¿Cuándo ocurrió?<br>
+                • ¿De dónde y hacia dónde se movió el material?<br>
+                • ¿Qué tipo de transacción causó el cambio?<br><br>
+
+                <em>Este módulo es la base de la trazabilidad, responsabilidad y transparencia operativa.</em><br><br>
+
+                <strong>Campos Incluidos</strong><br>
+                La tabla de Historial almacena todos los detalles relevantes de cada transacción:<br><br>
+                • Número de Parte<br>
+                • Ubicación(es) involucradas<br>
+                • Cambio de Cantidad (positivo o negativo)<br>
+                • Marca de Tiempo (fecha y hora exacta del evento)<br>
+                • Periodo (si aplica al ciclo de inventario)<br>
+                • Tipo de Transacción:<br>
+                &nbsp;&nbsp;– Put Away<br>
+                &nbsp;&nbsp;– Inbound<br>
+                &nbsp;&nbsp;– Ajuste Manual<br>
+                &nbsp;&nbsp;– Solicitud de Orden<br>
+                &nbsp;&nbsp;– Sub‑Transferencia<br>
+                &nbsp;&nbsp;– Ship<br>
+                &nbsp;&nbsp;– Receive<br>
+                &nbsp;&nbsp;– Y más<br>
+                • Ejecutado Por (usuario que realizó la acción)<br>
+                • Notas<br>
+                • Número de Solicitud de Orden<br>
+                • PIN de Put‑away<br>
+                • Contexto o referencias adicionales<br><br>
+
+                <em>Este nivel de detalle garantiza que cada movimiento esté completamente documentado y sea fácil de rastrear.</em><br><br>
+
+                <strong>Funciones Principales</strong><br><br>
+
+                <strong>Filtros Rápidos y Filtros Avanzados</strong><br>
+                Permiten reducir miles de registros al instante por número de parte, tipo, usuario, fecha u otros campos.<br><br>
+
+                <strong>Interacción estilo Excel</strong><br>
+                • Resaltado de fila completa<br>
+                • Resaltado de celda activa<br>
+                • Efectos hover suaves<br><br>
+
+                <strong>Herramientas de Exportación</strong><br>
+                Exporta el historial completo o resultados filtrados a Excel o CSV para auditorías, reportes o análisis externos.<br><br>
+
+                <em>Estas funciones facilitan navegar grandes volúmenes de datos históricos con rapidez y precisión.</em><br><br>
+
+                <strong>Por qué este módulo es crítico</strong><br>
+                El módulo de Historial es la única fuente de verdad para:<br>
+                • Auditorías<br>
+                • Investigaciones<br>
+                • Diferencias de inventario<br>
+                • Conteos cíclicos<br>
+                • Revisiones de supervisión<br>
+                • Cumplimiento<br>
+                • Análisis de causa raíz<br><br>
+
+                <em>Asegura que ICS no sea solo un WMS en tiempo real, sino un sistema completamente trazable y responsable donde cada acción queda registrada, validada y preservada.</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="historyTable3">历史记录表</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – 库存历史模块（摘要）</strong><br><br>
+                库存历史模块是 ICS WMS 的核心审计轨迹。每一次移动、调整、交易和操作行为都会流入此表。它提供对库存增加、减少、移动或状态变化原因的完整可视化，是审计、调查和运营准确性中最关键的模块。<br><br>
+
+                <strong>目的与重要性</strong><br>
+                该模块记录所有影响库存的事件，包括：<br>
+                • 增加（收货、上架、入库）<br>
+                • 减少（发货、拣货、消耗）<br>
+                • 库位之间的转移<br>
+                • 手动调整<br>
+                • 内部申请单<br>
+                • 批量导入<br>
+                • 盘点<br>
+                • 系统自动修正<br><br>
+
+                因为它捕捉了库存活动的完整生命周期，使主管、审计员和管理者能够回答关键问题：<br>
+                • 库存为何减少？<br>
+                • 库存为何增加？<br>
+                • 谁执行了该操作？<br>
+                • 何时发生？<br>
+                • 从哪里移动到哪里？<br>
+                • 是哪种交易类型导致的变化？<br><br>
+
+                <em>该模块是可追溯性、责任机制和运营透明度的基础。</em><br><br>
+
+                <strong>包含的数据字段</strong><br>
+                历史记录表存储每笔交易的所有相关细节：<br><br>
+                • 物料编号<br>
+                • 涉及的库位<br>
+                • 数量变化（正或负）<br>
+                • 时间戳（事件的精确日期和时间）<br>
+                • 周期（若适用于库存周期）<br>
+                • 交易类型：<br>
+                &nbsp;&nbsp;– 上架（Put Away）<br>
+                &nbsp;&nbsp;– 入库（Inbound）<br>
+                &nbsp;&nbsp;– 手动调整<br>
+                &nbsp;&nbsp;– 内部申请单<br>
+                &nbsp;&nbsp;– 库位转移（Sub‑Transfer）<br>
+                &nbsp;&nbsp;– 发货（Ship）<br>
+                &nbsp;&nbsp;– 收货（Receive）<br>
+                &nbsp;&nbsp;– 以及更多<br>
+                • 执行人（操作用户）<br>
+                • 备注<br>
+                • 申请单编号<br>
+                • 上架 PIN<br>
+                • 其他上下文或参考信息<br><br>
+
+                <em>这种细节级别确保每一次移动都被完整记录并易于追踪。</em><br><br>
+
+                <strong>功能特性</strong><br><br>
+
+                <strong>快速筛选与高级筛选</strong><br>
+                可按物料编号、类型、用户、日期等字段即时筛选数千条记录。<br><br>
+
+                <strong>类 Excel 交互方式</strong><br>
+                • 整行高亮<br>
+                • 活动单元格高亮<br>
+                • 平滑悬停效果<br><br>
+
+                <strong>导出工具</strong><br>
+                可将全部历史记录或筛选结果导出为 Excel 或 CSV，用于审计、报告或外部分析。<br><br>
+
+                <em>这些功能使浏览大量历史数据变得快速且精准。</em><br><br>
+
+                <strong>为何此模块至关重要</strong><br>
+                历史模块是以下工作的唯一真实来源：<br>
+                • 审计<br>
+                • 调查<br>
+                • 库存差异分析<br>
+                • 循环盘点<br>
+                • 主管审查<br>
+                • 合规性检查<br>
+                • 根因分析<br><br>
+
+                <em>它确保 ICS 不仅是一个实时 WMS，更是一个完全可追溯、可审计的系统，每个动作都被记录、验证并永久保存。</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="pickingOrders1">Picking Orders / Replacement</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Picking Orders / Replacement Modal (Summary)</strong><br><br>
+                The Picking Orders / Replacement modal is the operational interface used to fulfill internal material requests generated by the Order Request module. It is designed to ensure accuracy, enforce FIFO logic, prevent conflicts between users, and maintain full traceability of every picking action.<br><br>
+
+                <strong>Automatic Order Assignment</strong><br>
+                When a user opens the modal:<br>
+                • The system automatically assigns the oldest pending order to that user.<br>
+                • The order becomes locked, preventing other users from taking it at the same time.<br><br>
+                <em>This ensures fairness, prevents duplication, and maintains a clean workflow.</em><br><br>
+
+                <strong>Real‑Time Picking Interface</strong><br>
+                The modal displays all essential information for fulfilling the order:<br>
+                • Product Name / Part Number<br>
+                • Requested Quantity<br>
+                • Input field for Actual Quantity Pulled<br>
+                • Primary Location (FIFO‑based)<br><br>
+                The system automatically selects the oldest available location (FIFO) as the default pick location.<br><br>
+
+                <strong>Flexible Location Selection</strong><br>
+                Although the system recommends the primary FIFO location, the user is not forced to pick from it. The modal provides:<br>
+                • A list of all available locations for that part<br>
+                • The ability to switch to another location if needed<br>
+                • Automatic tracking of who changed the location and why<br><br>
+                <em>This ensures flexibility while maintaining accountability.</em><br><br>
+
+                <strong>Strict Validation Logic</strong><br>
+                The modal enforces strong rules to prevent incorrect picking:<br>
+                • Cannot pull more than the available quantity<br>
+                • Cannot pull more than what the order requires<br>
+                • If the user tries to send less, the system asks for confirmation<br>
+                • If the selected location runs out, the system alerts the user and suggests another location<br>
+                • All changes are validated in real time<br><br>
+                <em>This prevents mistakes and ensures accurate inventory control.</em><br><br>
+
+                <strong>Completion Workflow</strong><br>
+                Once the order is fulfilled:<br>
+                • The order is marked as Completed in the Order Request table<br>
+                • The actual quantity pulled is recorded<br>
+                • The inventory of the selected location is adjusted in real time<br>
+                • A detailed entry is written to the History module, including:<br>
+                &nbsp;&nbsp;– Part number<br>
+                &nbsp;&nbsp;– Location used<br>
+                &nbsp;&nbsp;– Quantity taken<br>
+                &nbsp;&nbsp;– User who performed the action<br>
+                &nbsp;&nbsp;– Timestamp<br>
+                &nbsp;&nbsp;– Order number<br>
+                &nbsp;&nbsp;– Any notes or exceptions<br><br>
+
+                <em>This guarantees full traceability for audits and operational reviews.</em><br><br>
+
+                <strong>Why This Modal Is Critical</strong><br>
+                The Picking Orders / Replacement modal ensures:<br>
+                • FIFO‑accurate picking<br>
+                • No double‑assignments<br>
+                • No over‑picking<br>
+                • No invalid locations<br>
+                • Full traceability<br>
+                • Real‑time inventory accuracy<br>
+                • A smooth, controlled workflow for production support<br><br>
+
+                <em>It is one of the most intelligent and operationally important components of the ICS system.</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="pickingOrders2">Órdenes de Picking / Reemplazo</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Módulo de Órdenes de Picking / Reemplazo (Resumen)</strong><br><br>
+                El modal de Órdenes de Picking / Reemplazo es la interfaz operativa utilizada para cumplir solicitudes internas de material generadas por el módulo de Solicitudes de Orden. Está diseñado para garantizar precisión, aplicar lógica FIFO, evitar conflictos entre usuarios y mantener trazabilidad completa de cada acción de picking.<br><br>
+
+                <strong>Asignación Automática de Órdenes</strong><br>
+                Cuando un usuario abre el modal:<br>
+                • El sistema asigna automáticamente la orden pendiente más antigua a ese usuario.<br>
+                • La orden queda bloqueada, evitando que otros usuarios la tomen al mismo tiempo.<br><br>
+                <em>Esto garantiza equidad, evita duplicaciones y mantiene un flujo de trabajo limpio.</em><br><br>
+
+                <strong>Interfaz de Picking en Tiempo Real</strong><br>
+                El modal muestra toda la información esencial para completar la orden:<br>
+                • Nombre del Producto / Número de Parte<br>
+                • Cantidad Solicitada<br>
+                • Campo para ingresar la Cantidad Real Extraída<br>
+                • Ubicación Principal (basada en FIFO)<br><br>
+                El sistema selecciona automáticamente la ubicación disponible más antigua (FIFO) como ubicación predeterminada de picking.<br><br>
+
+                <strong>Selección Flexible de Ubicación</strong><br>
+                Aunque el sistema recomienda la ubicación FIFO principal, el usuario no está obligado a usarla. El modal ofrece:<br>
+                • Una lista de todas las ubicaciones disponibles para esa parte<br>
+                • La capacidad de cambiar a otra ubicación si es necesario<br>
+                • Registro automático de quién cambió la ubicación y por qué<br><br>
+                <em>Esto garantiza flexibilidad sin perder responsabilidad.</em><br><br>
+
+                <strong>Lógica de Validación Estricta</strong><br>
+                El modal aplica reglas estrictas para evitar picking incorrecto:<br>
+                • No se puede extraer más de la cantidad disponible<br>
+                • No se puede extraer más de lo solicitado<br>
+                • Si el usuario intenta enviar menos, el sistema solicita confirmación<br>
+                • Si la ubicación seleccionada se queda sin inventario, el sistema alerta y sugiere otra ubicación<br>
+                • Todos los cambios se validan en tiempo real<br><br>
+                <em>Esto evita errores y garantiza control de inventario preciso.</em><br><br>
+
+                <strong>Flujo de Finalización</strong><br>
+                Una vez completada la orden:<br>
+                • La orden se marca como Completada en la tabla de Solicitudes<br>
+                • Se registra la cantidad real extraída<br>
+                • El inventario de la ubicación seleccionada se ajusta en tiempo real<br>
+                • Se escribe una entrada detallada en el módulo de Historial, incluyendo:<br>
+                &nbsp;&nbsp;– Número de parte<br>
+                &nbsp;&nbsp;– Ubicación utilizada<br>
+                &nbsp;&nbsp;– Cantidad extraída<br>
+                &nbsp;&nbsp;– Usuario que realizó la acción<br>
+                &nbsp;&nbsp;– Marca de tiempo<br>
+                &nbsp;&nbsp;– Número de orden<br>
+                &nbsp;&nbsp;– Notas o excepciones<br><br>
+
+                <em>Esto garantiza trazabilidad completa para auditorías y revisiones operativas.</em><br><br>
+
+                <strong>Por qué este Modal es Crítico</strong><br>
+                El modal de Picking / Reemplazo garantiza:<br>
+                • Picking preciso basado en FIFO<br>
+                • Sin doble asignación<br>
+                • Sin sobre‑picking<br>
+                • Sin ubicaciones inválidas<br>
+                • Trazabilidad completa<br>
+                • Exactitud de inventario en tiempo real<br>
+                • Flujo de trabajo controlado y eficiente para soporte de producción<br><br>
+
+                <em>Es uno de los componentes más inteligentes e importantes del sistema ICS.</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="pickingOrders3">拣货单 / 替换</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – 拣货单 / 替换模块（摘要）</strong><br><br>
+                拣货单 / 替换模块是用于完成由内部申请单模块生成的物料需求的操作界面。其设计旨在确保准确性、执行 FIFO 逻辑、防止用户冲突，并保持每一次拣货操作的完整可追溯性。<br><br>
+
+                <strong>自动分配订单</strong><br>
+                当用户打开该模块时：<br>
+                • 系统会自动将最早的待处理订单分配给该用户。<br>
+                • 订单会被锁定，防止其他用户同时领取。<br><br>
+                <em>这确保公平性，避免重复处理，并保持清晰的工作流程。</em><br><br>
+
+                <strong>实时拣货界面</strong><br>
+                模块显示完成订单所需的所有关键信息：<br>
+                • 产品名称 / 物料编号<br>
+                • 需求数量<br>
+                • 实际提取数量输入框<br>
+                • 主库位（基于 FIFO）<br><br>
+                系统会自动选择最早可用的库位作为默认拣货库位。<br><br>
+
+                <strong>灵活的库位选择</strong><br>
+                虽然系统推荐 FIFO 主库位，但用户并不被强制使用。模块提供：<br>
+                • 该物料所有可用库位列表<br>
+                • 必要时切换到其他库位的能力<br>
+                • 自动记录谁更改了库位以及原因<br><br>
+                <em>这确保灵活性，同时保持责任追踪。</em><br><br>
+
+                <strong>严格的验证逻辑</strong><br>
+                模块通过严格规则防止错误拣货：<br>
+                • 不可提取超过可用数量<br>
+                • 不可提取超过需求数量<br>
+                • 若用户提取较少，系统会要求确认<br>
+                • 若所选库位库存耗尽，系统会提醒并建议其他库位<br>
+                • 所有更改均实时验证<br><br>
+                <em>这防止错误并确保库存控制准确。</em><br><br>
+
+                <strong>完成流程</strong><br>
+                当订单完成时：<br>
+                • 订单在申请单表中标记为已完成<br>
+                • 记录实际提取数量<br>
+                • 所选库位的库存实时更新<br>
+                • 系统历史中写入详细记录，包括：<br>
+                &nbsp;&nbsp;– 物料编号<br>
+                &nbsp;&nbsp;– 使用的库位<br>
+                &nbsp;&nbsp;– 提取数量<br>
+                &nbsp;&nbsp;– 操作用户<br>
+                &nbsp;&nbsp;– 时间戳<br>
+                &nbsp;&nbsp;– 订单号<br>
+                &nbsp;&nbsp;– 备注或例外情况<br><br>
+
+                <em>这确保审计和运营审查的完整可追溯性。</em><br><br>
+
+                <strong>为何此模块至关重要</strong><br>
+                拣货 / 替换模块确保：<br>
+                • 基于 FIFO 的精准拣货<br>
+                • 无重复分配<br>
+                • 无超量拣货<br>
+                • 无无效库位<br>
+                • 完整可追溯性<br>
+                • 实时库存准确性<br>
+                • 平稳、可控的生产支持流程<br><br>
+
+                <em>它是 ICS 系统中最智能、最重要的操作模块之一。</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>        
+        
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="incomingLoadsSorting1">Incoming Loads (Sorting process)</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Packing List / Inbound Shipment Processing Module (Summary)</strong><br><br>
+                The Packing List module is the starting point for all inbound operations in ICS. It is designed to validate supplier‑provided shipment data, ensure consistency before processing, guide palletizing activities, and feed multiple downstream tables that control receiving, put‑away, and final verification. This module is the foundation of accurate inbound inventory management.<br><br>
+
+                <strong>Supplier Document Integration</strong><br>
+                Before a shipment arrives, suppliers typically provide a document (PDF or Excel) containing the expected contents of the load. ICS requires this document in Excel format and in a strict template to ensure consistency and prevent data corruption.<br><br>
+
+                The system provides a standardized template with the following fields:<br>
+                • Shipment Number<br>
+                • Load Number<br>
+                • Vendor Name<br>
+                • PO Number<br>
+                • Received Pallet Number (if the supplier ships by pallet)<br>
+                • Palletized Pallet Number (assigned internally during processing)<br>
+                • Carton Details (optional)<br>
+                • Part Number<br>
+                • Description<br>
+                • Number of Boxes<br>
+                • Unit of Measure<br>
+                • Units per Box<br>
+                • Total Quantity Expected<br>
+                • Palletized By (filled later)<br>
+                • Palletized Date (filled later)<br><br>
+
+                <em>This template ensures that every inbound file follows the same structure, enabling automated validation and processing.</em><br><br>
+
+                <strong>Strict Template Validation</strong><br>
+                When a user uploads a packing list, ICS performs multiple layers of validation before accepting the file:<br><br>
+
+                <strong>File name validation</strong><br>
+                Ensures the uploaded file matches the expected naming convention.<br><br>
+
+                <strong>Header validation</strong><br>
+                Confirms that all required columns exist and are in the correct order.<br><br>
+
+                <strong>Structure validation</strong><br>
+                Ensures the file is formatted exactly as the system expects.<br><br>
+
+                If anything is incorrect, ICS immediately alerts the user with a clear explanation, preventing corrupted or inconsistent data from entering the system.<br><br>
+
+                <strong>Part Number Verification & Error Highlighting</strong><br>
+                Even if the template is correct, the system still validates every part number against the master Item List.<br><br>
+
+                If any part number:<br>
+                • is misspelled<br>
+                • does not exist<br>
+                • does not match the system’s memory<br><br>
+
+                ICS will:<br>
+                • Highlight those rows in red<br>
+                • Move them to the top of the table<br>
+                • Prevent the user from continuing until they are corrected<br>
+                • Suggest the closest matching part number<br><br>
+
+                <em>This ensures that no invalid product enters the receiving workflow.</em><br><br>
+
+                <strong>Operational Workflow & Palletizing</strong><br>
+                Once the packing list is validated, the user can begin processing the shipment.<br><br>
+
+                Key features include:<br>
+                • Filtering by shipment to work on one load at a time<br>
+                • Assigning pallet numbers to each line<br>
+                • Marking lines as completed once palletized<br>
+                • Automatically updating a secondary table that consolidates items by part number<br>
+                • Highlighting items that appear on multiple pallets<br>
+                • Alerting users when someone else has already palletized the same item<br>
+                &nbsp;&nbsp;– A red icon appears to notify the team<br><br>
+
+                <em>This workflow supports high‑volume inbound operations with multiple workers.</em><br><br>
+
+                <strong>Downstream Integration & Real‑Time Updates</strong><br>
+                As palletizing progresses, ICS automatically updates:<br><br>
+
+                <strong>1. Consolidated Receiving Table</strong><br>
+                A cleaner, compact table that merges all pallets of the same item into a single line.<br>
+                This is used for final receiving validation.<br><br>
+
+                <strong>2. Receiving Validation Table</strong><br>
+                Tracks:<br>
+                • Total expected<br>
+                • Total palletized<br>
+                • Remaining quantity<br>
+                • Shortages or overages<br>
+                • RP Number assignment (Receiving Process Number)<br><br>
+
+                The RP Number is critical because it is used later during Put Away to track the exact inbound batch.<br><br>
+
+                <strong>3. Progress Tracking & Performance Metrics</strong><br>
+                ICS calculates:<br>
+                • Percentage of the shipment completed<br>
+                • Which users have palletized the most<br>
+                • Real‑time progress indicators<br><br>
+
+                <em>This helps supervisors monitor workload and performance.</em><br><br>
+
+                <strong>User Interaction Features</strong><br>
+                Like all ICS tables, the Packing List module includes:<br>
+                • Quick Filters<br>
+                • Advanced Filters<br>
+                • Export to Excel / CSV<br>
+                • Row highlighting<br>
+                • Active‑cell highlighting<br>
+                • Hover effects<br><br>
+
+                <strong>Why This Module Is Critical</strong><br>
+                The Packing List module ensures:<br>
+                • Supplier data is validated before entering the system<br>
+                • No invalid part numbers or corrupted files are processed<br>
+                • Palletizing is coordinated, traceable, and error‑free<br>
+                • Downstream receiving and put‑away workflows receive clean, structured data<br>
+                • Every inbound shipment is fully auditable<br>
+                • Inventory accuracy begins at the very first step<br><br>
+
+                <em>It is the gateway to the entire inbound process and one of the most sophisticated components of ICS.</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="incomingLoadsSorting2">Cargas Entrantes (Proceso de Clasificación)</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Módulo de Packing List / Procesamiento de Embarques Entrantes (Resumen)</strong><br><br>
+                El módulo de Packing List es el punto de inicio para todas las operaciones de entrada en ICS. Está diseñado para validar la información proporcionada por el proveedor, asegurar consistencia antes del procesamiento, guiar las actividades de paletización y alimentar múltiples tablas posteriores que controlan recepción, put‑away y verificación final. Este módulo es la base de una gestión de inventario entrante precisa.<br><br>
+
+                <strong>Integración de Documentos del Proveedor</strong><br>
+                Antes de que llegue un embarque, los proveedores suelen enviar un documento (PDF o Excel) con el contenido esperado de la carga. ICS requiere este documento en formato Excel y bajo una plantilla estricta para asegurar consistencia y evitar corrupción de datos.<br><br>
+
+                El sistema proporciona una plantilla estandarizada con los siguientes campos:<br>
+                • Número de Embarque<br>
+                • Número de Carga<br>
+                • Nombre del Proveedor<br>
+                • Número de OC<br>
+                • Número de Tarima Recibida (si el proveedor envía por tarima)<br>
+                • Número de Tarima Paletizada (asignado internamente)<br>
+                • Detalles de Cartón (opcional)<br>
+                • Número de Parte<br>
+                • Descripción<br>
+                • Número de Cajas<br>
+                • Unidad de Medida<br>
+                • Unidades por Caja<br>
+                • Cantidad Total Esperada<br>
+                • Paletizado Por (llenado después)<br>
+                • Fecha de Paletizado (llenado después)<br><br>
+
+                <em>Esta plantilla garantiza que cada archivo entrante siga la misma estructura, permitiendo validación y procesamiento automatizado.</em><br><br>
+
+                <strong>Validación Estricta de la Plantilla</strong><br>
+                Cuando un usuario sube un packing list, ICS realiza múltiples capas de validación antes de aceptarlo:<br><br>
+
+                <strong>Validación del nombre del archivo</strong><br>
+                Asegura que el archivo cumpla con el formato esperado.<br><br>
+
+                <strong>Validación de encabezados</strong><br>
+                Confirma que todas las columnas requeridas existan y estén en el orden correcto.<br><br>
+
+                <strong>Validación de estructura</strong><br>
+                Asegura que el archivo esté formateado exactamente como el sistema lo requiere.<br><br>
+
+                Si algo es incorrecto, ICS alerta inmediatamente al usuario con una explicación clara, evitando que datos corruptos entren al sistema.<br><br>
+
+                <strong>Verificación de Número de Parte y Resaltado de Errores</strong><br>
+                Incluso si la plantilla es correcta, el sistema valida cada número de parte contra la Lista Maestra de Artículos.<br><br>
+
+                Si algún número de parte:<br>
+                • está mal escrito<br>
+                • no existe<br>
+                • no coincide con la memoria del sistema<br><br>
+
+                ICS:<br>
+                • Resalta esas filas en rojo<br>
+                • Las mueve al inicio de la tabla<br>
+                • Impide continuar hasta corregirlas<br>
+                • Sugiere el número de parte más cercano<br><br>
+
+                <em>Esto garantiza que ningún producto inválido entre al flujo de recepción.</em><br><br>
+
+                <strong>Flujo Operativo y Paletización</strong><br>
+                Una vez validado el packing list, el usuario puede comenzar a procesar el embarque.<br><br>
+
+                Funciones clave:<br>
+                • Filtrar por embarque para trabajar una carga a la vez<br>
+                • Asignar números de tarima a cada línea<br>
+                • Marcar líneas como completadas al paletizar<br>
+                • Actualizar automáticamente una tabla secundaria que consolida artículos por número de parte<br>
+                • Resaltar artículos que aparecen en múltiples tarimas<br>
+                • Alertar cuando otro usuario ya paletizó el mismo artículo<br>
+                &nbsp;&nbsp;– Aparece un ícono rojo para notificar al equipo<br><br>
+
+                <em>Este flujo soporta operaciones de entrada de alto volumen con múltiples trabajadores.</em><br><br>
+
+                <strong>Integración Posterior y Actualizaciones en Tiempo Real</strong><br>
+                A medida que avanza la paletización, ICS actualiza automáticamente:<br><br>
+
+                <strong>1. Tabla Consolidada de Recepción</strong><br>
+                Una tabla más limpia que combina todas las tarimas del mismo artículo en una sola línea.<br>
+                Se usa para validación final de recepción.<br><br>
+
+                <strong>2. Tabla de Validación de Recepción</strong><br>
+                Rastrea:<br>
+                • Total esperado<br>
+                • Total paletizado<br>
+                • Cantidad restante<br>
+                • Faltantes o sobrantes<br>
+                • Asignación del Número RP (Receiving Process Number)<br><br>
+
+                El número RP es crítico porque se usa después en Put Away para rastrear el lote entrante exacto.<br><br>
+
+                <strong>3. Seguimiento de Progreso y Métricas</strong><br>
+                ICS calcula:<br>
+                • Porcentaje completado del embarque<br>
+                • Qué usuarios han paletizado más<br>
+                • Indicadores de progreso en tiempo real<br><br>
+
+                <em>Esto ayuda a supervisores a monitorear carga de trabajo y desempeño.</em><br><br>
+
+                <strong>Funciones de Interacción del Usuario</strong><br>
+                Como todas las tablas ICS, el módulo incluye:<br>
+                • Filtros Rápidos<br>
+                • Filtros Avanzados<br>
+                • Exportar a Excel / CSV<br>
+                • Resaltado de filas<br>
+                • Resaltado de celda activa<br>
+                • Efectos hover<br><br>
+
+                <strong>Por qué este Módulo es Crítico</strong><br>
+                El módulo de Packing List garantiza:<br>
+                • Validación de datos del proveedor antes de entrar al sistema<br>
+                • No se procesan números de parte inválidos ni archivos corruptos<br>
+                • La paletización es coordinada, trazable y sin errores<br>
+                • Los flujos de recepción y put‑away reciben datos limpios y estructurados<br>
+                • Cada embarque entrante es completamente auditable<br>
+                • La precisión del inventario comienza desde el primer paso<br><br>
+
+                <em>Es la puerta de entrada de todo el proceso inbound y uno de los componentes más sofisticados de ICS.</em><br>
+              </li>
             </ul>
           </div>
         </div>
 
         <div class="accordion-item">
-          <button class="accordion-header">Item & Location Table</button>
+          <button class="accordion-header" data-target="incomingLoadsSorting3">入库分拣流程</button>
           <div class="accordion-body">
             <ul>
-              <li>ICS – Item List & Location List Modules (Summary)
-              The Item List and Location List modules form the core master‑data foundation of the ICS WMS. Every validation, every transaction, and every inventory movement depends on the accuracy and integrity of these two tables. Without them, the system cannot guarantee consistency, correctness, or traceability.
+              <li>
+                <strong>ICS – 装箱清单 / 入库处理模块（摘要）</strong><br><br>
+                装箱清单模块是 ICS 所有入库操作的起点。其设计旨在验证供应商提供的装运数据、确保处理前的一致性、指导托盘化流程，并为多个下游表提供数据，以控制收货、上架和最终验证。该模块是准确入库管理的基础。<br><br>
 
-              Why These Tables Matter
-              These modules define the official catalog of products and warehouse locations.
-              They ensure that:
+                <strong>供应商文件集成</strong><br>
+                在货物到达之前，供应商通常会提供一个包含预期装载内容的文件（PDF 或 Excel）。ICS 要求该文件为 Excel 格式，并遵循严格的模板，以确保一致性并防止数据损坏。<br><br>
 
-              Only valid part numbers can be received, shipped, transferred, or adjusted
+                系统提供的标准化模板包含以下字段：<br>
+                • 装运编号<br>
+                • 载荷编号<br>
+                • 供应商名称<br>
+                • 采购订单号<br>
+                • 收到的托盘编号（若供应商按托盘发货）<br>
+                • 托盘化托盘编号（内部处理时分配）<br>
+                • 箱体详情（可选）<br>
+                • 物料编号<br>
+                • 描述<br>
+                • 箱数<br>
+                • 计量单位<br>
+                • 每箱数量<br>
+                • 预期总数量<br>
+                • 托盘化人员（稍后填写）<br>
+                • 托盘化日期（稍后填写）<br><br>
 
-              Only registered and active locations can be used in operations
+                <em>该模板确保所有入库文件遵循相同结构，从而实现自动化验证与处理。</em><br><br>
 
-              All inventory activity is tied to clean, controlled master data
+                <strong>严格的模板验证</strong><br>
+                当用户上传装箱清单时，ICS 会在接受文件前执行多层验证：<br><br>
 
-              The system remains consistent and auditable across all modules
+                <strong>文件名验证</strong><br>
+                确保文件名符合预期格式。<br><br>
 
-              They are the “source of truth” for the entire WMS.
+                <strong>表头验证</strong><br>
+                确认所有必需列存在且顺序正确。<br><br>
 
-              Item List – Key Capabilities
-              The Item List stores all essential product attributes required for inventory control and reporting:
+                <strong>结构验证</strong><br>
+                确保文件格式完全符合系统要求。<br><br>
 
-              Part Number
+                若有任何错误，ICS 会立即提醒用户并提供清晰说明，防止损坏或不一致的数据进入系统。<br><br>
 
-              Product Description
+                <strong>物料编号验证与错误高亮</strong><br>
+                即使模板正确，系统仍会将每个物料编号与主物料清单进行比对。<br><br>
 
-              Unit of Measure (U/M)
+                若某个物料编号：<br>
+                • 拼写错误<br>
+                • 不存在<br>
+                • 与系统记录不匹配<br><br>
 
-              Monthly Usage
+                ICS 将：<br>
+                • 将该行标红<br>
+                • 移动到表格顶部<br>
+                • 阻止继续处理直到修正<br>
+                • 建议最接近的物料编号<br><br>
 
-              Status (Active / Inactive)
+                <em>确保无无效物料进入收货流程。</em><br><br>
 
-              The status field is especially important:
-              Inactive items remain in the system for historical reference, ensuring past transactions remain traceable while preventing new activity on discontinued parts.
+                <strong>操作流程与托盘化</strong><br>
+                装箱清单验证通过后，用户即可开始处理装运。<br><br>
 
-              Functional Features
-              Quick Filters & Advanced Filters
+                关键功能包括：<br>
+                • 按装运编号过滤，一次处理一批<br>
+                • 为每行分配托盘编号<br>
+                • 托盘化完成后标记行状态<br>
+                • 自动更新二级表，将相同物料的托盘合并<br>
+                • 高亮显示出现在多个托盘中的物料<br>
+                • 当其他用户已托盘化相同物料时提醒<br>
+                &nbsp;&nbsp;– 显示红色图标提醒团队<br><br>
 
-              Bulk Import of Items (avoid manual entry)
+                <em>该流程支持多员工的高容量入库操作。</em><br><br>
 
-              Export to Excel / CSV
+                <strong>下游集成与实时更新</strong><br>
+                随着托盘化进度推进，ICS 会自动更新：<br><br>
 
-              Excel‑style row selection
+                <strong>1. 收货合并表</strong><br>
+                将相同物料的所有托盘合并为一行，用于最终收货验证。<br><br>
 
-              Full‑row highlight
+                <strong>2. 收货验证表</strong><br>
+                跟踪：<br>
+                • 预期数量<br>
+                • 已托盘化数量<br>
+                • 剩余数量<br>
+                • 缺失或超量<br>
+                • RP 编号（Receiving Process Number）分配<br><br>
 
-              Active‑cell highlight
+                RP 编号在后续上架流程中用于追踪入库批次。<br><br>
 
-              Hover interaction for fast scanning
+                <strong>3. 进度跟踪与绩效指标</strong><br>
+                ICS 计算：<br>
+                • 装运完成百分比<br>
+                • 托盘化最多的用户<br>
+                • 实时进度指示器<br><br>
 
-              These features make the Item List fast, intuitive, and easy to maintain even with thousands of SKUs.
+                <em>帮助主管监控工作量与绩效。</em><br><br>
 
-              Location List – Key Capabilities
-              The Location List defines every valid storage location in the warehouse.
-              Each location includes:
+                <strong>用户交互功能</strong><br>
+                与所有 ICS 表格一样，装箱清单模块包含：<br>
+                • 快速筛选<br>
+                • 高级筛选<br>
+                • 导出至 Excel / CSV<br>
+                • 行高亮<br>
+                • 活动单元格高亮<br>
+                • 悬停效果<br><br>
 
-              Location Code
+                <strong>为何此模块至关重要</strong><br>
+                装箱清单模块确保：<br>
+                • 供应商数据在进入系统前得到验证<br>
+                • 无无效物料编号或损坏文件被处理<br>
+                • 托盘化过程协调、有迹可循且无错误<br>
+                • 下游收货与上架流程接收干净、结构化的数据<br>
+                • 每批入库货物均可完全审计<br>
+                • 库存准确性从第一步就开始建立<br><br>
 
-              Status (Active / Inactive)
-
-              Inactive locations remain available for historical reference, ensuring past movements remain valid while preventing new transactions in obsolete areas.
-
-              Functional Features
-              Quick Filters & Advanced Filters
-
-              Bulk Import of Locations
-
-              Export to Excel / CSV
-
-              Excel‑style interaction
-
-              Full‑row highlight
-
-              Active‑cell highlight
-
-              Hover effects for improved readability
-
-              These tools make it easy to maintain a clean, accurate location structure — essential for all receiving, picking, transfers, and cycle counts.
-
-              Why These Modules Are Critical
-              Together, the Item List and Location List ensure:
-
-              Strict validation across all operational modules
-
-              Error‑free receiving, shipping, and transfers
-
-              Consistent inventory history
-
-              Accurate reporting and KPIs
-
-              A stable foundation for all real‑time transactions
-
-              They are not just reference tables — they are the backbone of the entire ICS WMS.</li>
-              
+                <em>它是整个入库流程的入口，也是 ICS 最复杂的组件之一。</em><br>
+              </li>
             </ul>
           </div>
+        </div>
+
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="incomingLoadsVerification1">Incoming Loads verification</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Incoming Load Details Module (Full Summary with Enhanced LPN Printing System)</strong><br><br>
+                The Incoming Load Details module is the second stage of the inbound workflow in ICS, directly fed by the Packing List module. This is where the receiving team confirms quantities, assigns LPNs, validates discrepancies, and finalizes the shipment for procurement and warehouse operations. It is a highly controlled, real‑time environment designed for accuracy, traceability, and operational consistency.<br><br>
+
+                <strong>LPN Generation & Assignment</strong><br>
+                At the core of this module is a flexible and powerful LPN (License Plate Number) management system. Users can:<br>
+                • Generate all LPNs at once for the entire filtered shipment<br>
+                • Print LPN labels for already‑generated LPNs<br>
+                • Print blank labels for manual assignment<br>
+                • Manually enter LPNs line‑by‑line if preferred<br><br>
+
+                This allows the warehouse to choose the workflow that best fits the operation — pre‑printing labels, printing on demand, or entering LPNs manually.<br><br>
+
+                Once an LPN is assigned:<br>
+                • The line’s status changes from Pending to Confirmed<br>
+                • The status turns green to indicate successful confirmation<br><br>
+
+                <strong>Selective or Bulk Label Printing</strong><br>
+                Every print option — whether Print Labels or Print LPNs — includes multiple printing modes:<br>
+                • Print only the selected line — ideal for reprinting a damaged or missing label<br>
+                • Print all filtered lines — useful when printing labels for an entire shipment or pallet group<br><br>
+
+                <em>This gives operators full control over exactly which labels they want to generate.</em><br><br>
+
+                <strong>Multiple Standard Label Sizes</strong><br>
+                To avoid restricting the warehouse to a single label format, the system supports a wide range of industry‑standard label sizes, including:<br>
+                • 2 × 1<br>
+                • 3 × 1<br>
+                • 3 × 2<br>
+                • 2 × 2<br>
+                • 4 × 2<br>
+                • 4 × 2.5<br>
+                • 4 × 3<br>
+                • 5 × 3<br><br>
+
+                <strong>Custom Label Size Support</strong><br>
+                Beyond the standard options, the system includes a Custom Size mode.<br>
+                Users can enter any width and height, allowing ICS to:<br>
+                • Adapt to unusual label formats<br>
+                • Support legacy printers<br>
+                • Match supplier‑specific label requirements<br>
+                • Print on any label stock available in the warehouse<br><br>
+
+                <em>There are no limitations — the system dynamically adjusts to whatever size the user enters.</em><br><br>
+
+                <strong>Automatic Content Scaling</strong><br>
+                Regardless of the label size chosen — standard or custom — the system automatically adjusts:<br>
+                • Barcode or QR code size<br>
+                • Font size<br>
+                • Layout spacing<br>
+                • Margins<br><br>
+
+                This ensures:<br>
+                • The barcode remains scannable<br>
+                • The text remains readable<br>
+                • The label layout stays clean and professional<br>
+                • Nothing gets cut off during printing<br><br>
+
+                <strong>Barcode or QR Code Options</strong><br>
+                Each label can be printed using:<br>
+                • Barcode (Code128)<br>
+                • QR Code<br><br>
+
+                Users can choose whichever format best fits their scanning equipment or operational workflow. Both formats scale automatically to the selected label size.<br><br>
+
+                <strong>Discrepancy Detection & Color Coding</strong><br>
+                The module automatically detects quantity discrepancies:<br>
+                • If the expected quantity does not match the received quantity, the system highlights the line in red<br>
+                • The quantity field is wrapped in a red indicator<br>
+                • The entire shipment is flagged to show that changes occurred<br><br>
+
+                <em>This ensures procurement and receiving supervisors can immediately identify issues.</em><br><br>
+
+                <strong>Real‑Time Receiving Data Capture</strong><br>
+                Each confirmed line records:<br>
+                • Received Date<br>
+                • Received Time<br>
+                • Received By<br>
+                • Notes or comments<br><br>
+
+                <em>This creates a complete audit trail for every inbound line.</em><br><br>
+
+                <strong>Put Away Tracking</strong><br>
+                The module also captures the final warehouse placement:<br>
+                • Put Away By<br>
+                • Put Away Date<br>
+                • Put Away Time<br>
+                • Put Away Location<br><br>
+
+                <em>This ensures that every item is traceable from supplier → receiving → pallet → final rack location.</em><br><br>
+
+                <strong>Integration With Incoming Load Summary</strong><br>
+                As each line is confirmed:<br>
+                • The parent table Incoming Load updates in real time<br>
+                • It calculates the percentage received<br>
+                • It shows whether the shipment is fully received or short<br>
+                • If the total received is less than expected, the summary row is highlighted in light red<br><br>
+
+                <em>This gives procurement and supervisors a clear overview of shipment completion.</em><br><br>
+
+                <strong>Operational Buttons & Permissions</strong><br>
+                The module includes several high‑impact actions:<br>
+                • Generate LPNs<br>
+                • Clear LPNs<br>
+                • Print LPN labels<br>
+                • Print blank labels<br>
+                • Confirm individual lines<br>
+                • Confirm all lines<br>
+                • Delete shipment data (restricted to supervisors/managers/owners)<br><br>
+
+                All actions are permission‑controlled based on the logged‑in user’s role.<br><br>
+
+                <strong>Change Tracking & Historical Accuracy</strong><br>
+                If a user modifies a line after it was previously confirmed:<br>
+                • The system logs the change<br>
+                • It records what the quantity was before and after<br>
+                • It preserves a full history of adjustments<br><br>
+
+                <em>This ensures complete transparency and prevents silent changes.</em><br><br>
+
+                <strong>User Interaction Features</strong><br>
+                Like all ICS tables, Incoming Load Details includes:<br>
+                • Quick Filters<br>
+                • Advanced Filters<br>
+                • Export to Excel / CSV<br>
+                • Row highlighting<br>
+                • Active‑cell highlighting<br>
+                • Hover effects<br><br>
+
+                <strong>Why This Module Is Critical</strong><br>
+                Incoming Load Details ensures:<br>
+                • Accurate receiving<br>
+                • Clean LPN assignment<br>
+                • Full discrepancy tracking<br>
+                • Real‑time updates to procurement<br>
+                • Complete traceability for audits<br>
+                • Controlled access to sensitive actions<br>
+                • A smooth transition into Put Away and final inventory placement<br><br>
+
+                <em>It is the central verification point of the inbound process, ensuring that what was expected, what was received, and what was stored all match perfectly.</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="incomingLoadsVerification2">Verificación de Cargas Entrantes</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Módulo de Detalles de Cargas Entrantes (Resumen Completo con Sistema Mejorado de Impresión de LPN)</strong><br><br>
+                El módulo de Detalles de Cargas Entrantes es la segunda etapa del flujo inbound en ICS, alimentado directamente por el módulo de Packing List. Aquí es donde el equipo de recepción confirma cantidades, asigna LPNs, valida discrepancias y finaliza el embarque para compras y operaciones de almacén. Es un entorno altamente controlado, en tiempo real, diseñado para precisión, trazabilidad y consistencia operativa.<br><br>
+
+                <strong>Generación y Asignación de LPN</strong><br>
+                En el núcleo de este módulo existe un sistema flexible y potente de gestión de LPN (License Plate Number). Los usuarios pueden:<br>
+                • Generar todos los LPNs de una sola vez para el embarque filtrado<br>
+                • Imprimir etiquetas LPN para los LPNs ya generados<br>
+                • Imprimir etiquetas en blanco para asignación manual<br>
+                • Ingresar LPNs manualmente línea por línea si se prefiere<br><br>
+
+                Esto permite al almacén elegir el flujo que mejor se adapte a la operación — pre‑impresión, impresión bajo demanda o entrada manual.<br><br>
+
+                Una vez asignado un LPN:<br>
+                • El estatus de la línea cambia de Pendiente a Confirmado<br>
+                • El estatus se vuelve verde indicando confirmación exitosa<br><br>
+
+                <strong>Impresión Selectiva o Masiva</strong><br>
+                Cada opción de impresión — Print Labels o Print LPNs — incluye múltiples modos:<br>
+                • Imprimir solo la línea seleccionada<br>
+                • Imprimir todas las líneas filtradas<br><br>
+
+                <em>Esto da control total al operador sobre qué etiquetas generar.</em><br><br>
+
+                <strong>Múltiples Tamaños Estándar de Etiquetas</strong><br>
+                El sistema soporta una amplia variedad de tamaños estándar, incluyendo:<br>
+                • 2 × 1<br>
+                • 3 × 1<br>
+                • 3 × 2<br>
+                • 2 × 2<br>
+                • 4 × 2<br>
+                • 4 × 2.5<br>
+                • 4 × 3<br>
+                • 5 × 3<br><br>
+
+                <strong>Soporte para Tamaños Personalizados</strong><br>
+                Además, el sistema incluye un modo de Tamaño Personalizado.  
+                Los usuarios pueden ingresar cualquier ancho y alto, permitiendo que ICS:<br>
+                • Se adapte a formatos inusuales<br>
+                • Soporte impresoras antiguas<br>
+                • Cumpla requisitos específicos de proveedores<br>
+                • Imprima en cualquier tipo de etiqueta disponible<br><br>
+
+                <em>No hay limitaciones — el sistema se ajusta dinámicamente al tamaño ingresado.</em><br><br>
+
+                <strong>Escalado Automático del Contenido</strong><br>
+                Sin importar el tamaño elegido, el sistema ajusta automáticamente:<br>
+                • Tamaño del código de barras o QR<br>
+                • Tamaño de fuente<br>
+                • Espaciado del diseño<br>
+                • Márgenes<br><br>
+
+                Esto garantiza:<br>
+                • Códigos escaneables<br>
+                • Texto legible<br>
+                • Diseño limpio y profesional<br>
+                • Nada se corta al imprimir<br><br>
+
+                <strong>Opciones de Código de Barras o QR</strong><br>
+                Cada etiqueta puede imprimirse como:<br>
+                • Código de Barras (Code128)<br>
+                • Código QR<br><br>
+
+                Ambos formatos se escalan automáticamente al tamaño seleccionado.<br><br>
+
+                <strong>Detección de Discrepancias y Colores</strong><br>
+                El módulo detecta automáticamente discrepancias de cantidad:<br>
+                • Si la cantidad esperada no coincide con la recibida, la línea se marca en rojo<br>
+                • El campo de cantidad se resalta<br>
+                • El embarque completo se marca indicando cambios<br><br>
+
+                <em>Esto permite identificar problemas inmediatamente.</em><br><br>
+
+                <strong>Captura de Datos de Recepción en Tiempo Real</strong><br>
+                Cada línea confirmada registra:<br>
+                • Fecha de Recepción<br>
+                • Hora de Recepción<br>
+                • Recibido Por<br>
+                • Notas<br><br>
+
+                <em>Esto crea una pista de auditoría completa.</em><br><br>
+
+                <strong>Seguimiento de Put Away</strong><br>
+                El módulo también captura la ubicación final en almacén:<br>
+                • Put Away Por<br>
+                • Fecha de Put Away<br>
+                • Hora de Put Away<br>
+                • Ubicación de Put Away<br><br>
+
+                <em>Esto asegura trazabilidad completa desde proveedor → recepción → tarima → rack final.</em><br><br>
+
+                <strong>Integración con Incoming Load Summary</strong><br>
+                A medida que se confirman líneas:<br>
+                • La tabla padre se actualiza en tiempo real<br>
+                • Calcula el porcentaje recibido<br>
+                • Indica si el embarque está completo o corto<br>
+                • Si se recibió menos de lo esperado, la fila se marca en rojo claro<br><br>
+
+                <em>Esto da a compras y supervisores una vista clara del progreso.</em><br><br>
+
+                <strong>Botones Operativos y Permisos</strong><br>
+                El módulo incluye acciones clave:<br>
+                • Generar LPNs<br>
+                • Limpiar LPNs<br>
+                • Imprimir etiquetas LPN<br>
+                • Imprimir etiquetas en blanco<br>
+                • Confirmar líneas individuales<br>
+                • Confirmar todas las líneas<br>
+                • Borrar datos del embarque (solo supervisores/gerentes/propietarios)<br><br>
+
+                Todas las acciones están controladas por permisos según el rol del usuario.<br><br>
+
+                <strong>Registro de Cambios y Exactitud Histórica</strong><br>
+                Si un usuario modifica una línea ya confirmada:<br>
+                • El sistema registra el cambio<br>
+                • Guarda la cantidad antes y después<br>
+                • Mantiene historial completo de ajustes<br><br>
+
+                <em>Esto evita cambios silenciosos y garantiza transparencia total.</em><br><br>
+
+                <strong>Funciones de Interacción del Usuario</strong><br>
+                Como todas las tablas ICS, incluye:<br>
+                • Filtros Rápidos<br>
+                • Filtros Avanzados<br>
+                • Exportar a Excel / CSV<br>
+                • Resaltado de filas<br>
+                • Resaltado de celda activa<br>
+                • Efectos hover<br><br>
+
+                <strong>Por qué este Módulo es Crítico</strong><br>
+                Incoming Load Details garantiza:<br>
+                • Recepción precisa<br>
+                • Asignación limpia de LPNs<br>
+                • Seguimiento completo de discrepancias<br>
+                • Actualizaciones en tiempo real para compras<br>
+                • Trazabilidad completa para auditorías<br>
+                • Acceso controlado a acciones sensibles<br>
+                • Transición fluida hacia Put Away y ubicación final<br><br>
+
+                <em>Es el punto central de verificación del proceso inbound, asegurando que lo esperado, lo recibido y lo almacenado coincidan perfectamente.</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="incomingLoadsVerification3">入库验证</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – 入库明细模块（含增强型 LPN 打印系统的完整摘要）</strong><br><br>
+                入库明细模块是 ICS 入库流程的第二阶段，由装箱清单模块直接驱动。在这里，收货团队确认数量、分配 LPN、验证差异，并为采购和仓储操作最终确认装运。该模块是一个高度受控的实时环境，旨在确保准确性、可追溯性和操作一致性。<br><br>
+
+                <strong>LPN 生成与分配</strong><br>
+                模块核心是一个灵活且强大的 LPN（托盘号）管理系统。用户可以：<br>
+                • 一次性为整个过滤后的装运生成所有 LPN<br>
+                • 打印已生成的 LPN 标签<br>
+                • 打印空白标签用于手动分配<br>
+                • 按行手动输入 LPN<br><br>
+
+                这允许仓库根据需要选择最佳流程：预打印、按需打印或手动输入。<br><br>
+
+                一旦 LPN 被分配：<br>
+                • 行状态从“待处理”变为“已确认”<br>
+                • 状态变为绿色以表示成功确认<br><br>
+
+                <strong>选择性或批量打印</strong><br>
+                所有打印选项均支持多种模式：<br>
+                • 仅打印所选行<br>
+                • 打印所有过滤行<br><br>
+
+                <em>让操作员完全掌控需要生成哪些标签。</em><br><br>
+
+                <strong>多种标准标签尺寸</strong><br>
+                系统支持多种行业标准尺寸，包括：<br>
+                • 2 × 1<br>
+                • 3 × 1<br>
+                • 3 × 2<br>
+                • 2 × 2<br>
+                • 4 × 2<br>
+                • 4 × 2.5<br>
+                • 4 × 3<br>
+                • 5 × 3<br><br>
+
+                <strong>自定义标签尺寸</strong><br>
+                系统还支持自定义尺寸模式。  
+                用户可输入任意宽度和高度，使 ICS 能够：<br>
+                • 适应非常规标签格式<br>
+                • 支持旧式打印机<br>
+                • 满足供应商特定要求<br>
+                • 使用仓库中任何可用标签材料<br><br>
+
+                <em>系统会根据输入尺寸自动调整，无任何限制。</em><br><br>
+
+                <strong>内容自动缩放</strong><br>
+                无论选择何种尺寸，系统都会自动调整：<br>
+                • 条码或二维码大小<br>
+                • 字体大小<br>
+                • 布局间距<br>
+                • 边距<br><br>
+
+                确保：<br>
+                • 条码可扫描<br>
+                • 文本清晰可读<br>
+                • 布局专业整洁<br>
+                • 打印时不会被裁切<br><br>
+
+                <strong>条码或二维码选项</strong><br>
+                每个标签可选择：<br>
+                • 条码（Code128）<br>
+                • 二维码<br><br>
+
+                两种格式都会根据标签尺寸自动缩放。<br><br>
+
+                <strong>差异检测与颜色标识</strong><br>
+                模块会自动检测数量差异：<br>
+                • 若预期数量与收到数量不符，该行标红<br>
+                • 数量字段加红框<br>
+                • 整个装运被标记为有变动<br><br>
+
+                <em>确保采购与收货主管能立即发现问题。</em><br><br>
+
+                <strong>实时收货数据记录</strong><br>
+                每行确认后记录：<br>
+                • 收货日期<br>
+                • 收货时间<br>
+                • 收货人<br>
+                • 备注<br><br>
+
+                <em>形成完整的审计轨迹。</em><br><br>
+
+                <strong>上架跟踪</strong><br>
+                模块还记录最终上架信息：<br>
+                • 上架人<br>
+                • 上架日期<br>
+                • 上架时间<br>
+                • 上架库位<br><br>
+
+                <em>确保物料从供应商 → 收货 → 托盘 → 最终库位全程可追踪。</em><br><br>
+
+                <strong>与入库汇总表集成</strong><br>
+                每行确认后：<br>
+                • 上级表实时更新<br>
+                • 计算收货百分比<br>
+                • 显示装运是否完成或短缺<br>
+                • 若收到数量少于预期，汇总行标浅红色<br><br>
+
+                <em>为采购与主管提供清晰的进度概览。</em><br><br>
+
+                <strong>操作按钮与权限</strong><br>
+                模块包含多项关键操作：<br>
+                • 生成 LPN<br>
+                • 清除 LPN<br>
+                • 打印 LPN 标签<br>
+                • 打印空白标签<br>
+                • 确认单行<br>
+                • 确认所有行<br>
+                • 删除装运数据（仅限主管/经理/管理员）<br><br>
+
+                所有操作均基于用户角色进行权限控制。<br><br>
+
+                <strong>变更记录与历史准确性</strong><br>
+                若用户修改已确认的行：<br>
+                • 系统记录变更<br>
+                • 保存修改前后数量<br>
+                • 保留完整调整历史<br><br>
+
+                <em>确保透明度并防止未记录的更改。</em><br><br>
+
+                <strong>用户交互功能</strong><br>
+                与所有 ICS 表格一致，包含：<br>
+                • 快速筛选<br>
+                • 高级筛选<br>
+                • 导出至 Excel / CSV<br>
+                • 行高亮<br>
+                • 活动单元格高亮<br>
+                • 悬停效果<br><br>
+
+                <strong>为何此模块至关重要</strong><br>
+                入库明细模块确保：<br>
+                • 收货准确<br>
+                • LPN 分配清晰<br>
+                • 差异跟踪完整<br>
+                • 实时更新采购<br>
+                • 完整可审计性<br>
+                • 对敏感操作的权限控制<br>
+                • 顺利过渡到上架与最终库位<br><br>
+
+                <em>它是入库流程的核心验证点，确保预期、收到与存储的数据完全一致。</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+        <div class="accordion-item">
+          
+          <button class="accordion-header" data-target="physicalCountTable1">Physical count Table</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Physical Counts Module (Summary)</strong><br><br>
+                The Physical Counts module is designed to support accurate cycle counts, full inventory audits, and reconciliation processes. It provides a controlled, validated, and fully traceable environment where users can record counted quantities, compare them against system values, and prepare the data for final approval by inventory and finance teams.<br><br>
+
+                <strong>Data Fields Captured in the Physical Counts Table</strong><br>
+                Each physical count entry includes the following fields:<br>
+                • Tag Number<br>
+                • Part Number<br>
+                • Description<br>
+                • Counted Quantity<br>
+                • Count Date<br>
+                • Count Time<br>
+                • Location Counted<br>
+                • Counted By<br>
+                • Discrepancy (difference between counted vs. system quantity)<br>
+                • System Quantity (what the system had before the count)<br>
+                • Notes (editable for comments such as “duplicate,” “ignored,” “damaged,” etc.)<br><br>
+
+                <em>These fields provide a complete audit trail for every counted item.</em><br><br>
+
+                <strong>Modal‑Based Counting Workflow</strong><br>
+                Counts are entered through a dedicated modal form that ensures accuracy and prevents invalid data entry.<br><br>
+
+                <strong>Validation Logic</strong><br>
+                When the user enters a part number:<br>
+                • The system validates it against the Item List<br>
+                • If the part number is invalid, the system blocks the entry and alerts the user<br>
+                • Only valid part numbers are allowed<br><br>
+
+                Once validated, the modal automatically displays:<br>
+                • Unit of Measure<br>
+                • Description<br>
+                • Next Tag Number assigned to the user<br><br>
+
+                The user then enters:<br>
+                • Counted Quantity<br>
+                • Location<br><br>
+
+                After saving, the entry is written to the Physical Counts table.<br><br>
+
+                <strong>Tag Number Logic (Sequential & User‑Specific)</strong><br>
+                Tag Numbers are essential for audit tracking. ICS assigns Tag Numbers using the following rules:<br>
+                • Each user receives their own sequence<br>
+                • Tag numbers include the user’s initials<br>
+                • Numbers increment sequentially (e.g., JS‑10000, JS‑10001, JS‑10002…)<br>
+                • No duplicates are allowed<br><br>
+
+                <em>Tag numbers help auditors trace who counted what, and in what order.</em><br><br>
+
+                <strong>User Permissions & Visibility</strong><br>
+                The module enforces strict visibility rules:<br>
+                • Users can only see their own counts — prevents bias or influence during the counting process<br>
+                • Administrators can see all counts — necessary for reconciliation, auditing, and oversight<br><br>
+
+                <em>This separation ensures integrity during the counting phase.</em><br><br>
+
+                <strong>Discrepancy Tracking</strong><br>
+                The system automatically compares:<br>
+                • Counted Quantity<br>
+                • System Quantity<br><br>
+
+                If there is a difference:<br>
+                • The discrepancy is calculated<br>
+                • The row is highlighted<br>
+                • The system quantity is displayed for reference<br><br>
+
+                <em>This makes it easy to identify items that require investigation or recounting.</em><br><br>
+
+                <strong>Reconciliation Workflow (Controlled & Manual)</strong><br>
+                The Physical Counts module does not automatically update the Inventory By Location table — intentionally.<br><br>
+
+                Before updating inventory, the reconciliation team must:<br>
+                • Review all discrepancies<br>
+                • Compare counts with system values<br>
+                • Discuss variances with finance<br>
+                • Approve or reject adjustments<br>
+                • Perform recounts if necessary<br><br>
+
+                Only after approval is the final inventory uploaded to replace the existing Inventory By Location data.<br><br>
+
+                <em>This ensures financial accuracy and prevents accidental inventory corruption.</em><br><br>
+
+                <strong>Export Tools</strong><br>
+                The module includes:<br>
+                • Quick Filters<br>
+                • Advanced Filters<br>
+                • Export to Excel / CSV<br><br>
+
+                These tools allow teams to export the count results for reconciliation meetings, audits, or external review.<br><br>
+
+                <strong>User Interaction Features</strong><br>
+                Like all ICS tables, the Physical Counts module includes:<br>
+                • Row highlighting<br>
+                • Active‑cell highlighting<br>
+                • Hover effects<br>
+                • Clean, spreadsheet‑like interaction<br><br>
+
+                <strong>Why This Module Is Critical</strong><br>
+                The Physical Counts module ensures:<br>
+                • Accurate cycle counts<br>
+                • Full traceability of who counted what<br>
+                • Controlled validation of part numbers<br>
+                • Clear discrepancy identification<br>
+                • Proper reconciliation with finance<br>
+                • A clean, auditable record of all count activity<br>
+                • Protection against accidental inventory changes<br><br>
+
+                <em>It is the backbone of the ICS audit process and a key component for maintaining inventory accuracy and financial integrity.</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="physicalCountTable2">Tabla de Conteo Físico</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – Módulo de Conteos Físicos (Resumen)</strong><br><br>
+                El módulo de Conteos Físicos está diseñado para soportar conteos cíclicos precisos, auditorías completas de inventario y procesos de conciliación. Proporciona un entorno controlado, validado y completamente trazable donde los usuarios pueden registrar cantidades contadas, compararlas con los valores del sistema y preparar los datos para la aprobación final por parte de los equipos de inventario y finanzas.<br><br>
+
+                <strong>Campos Capturados en la Tabla de Conteos Físicos</strong><br>
+                Cada entrada de conteo físico incluye los siguientes campos:<br>
+                • Número de Tag<br>
+                • Número de Parte<br>
+                • Descripción<br>
+                • Cantidad Contada<br>
+                • Fecha del Conteo<br>
+                • Hora del Conteo<br>
+                • Ubicación Contada<br>
+                • Contado Por<br>
+                • Discrepancia (diferencia entre contado vs. cantidad del sistema)<br>
+                • Cantidad del Sistema<br>
+                • Notas (editable para comentarios como “duplicado”, “ignorado”, “dañado”, etc.)<br><br>
+
+                <em>Estos campos proporcionan una pista de auditoría completa para cada artículo contado.</em><br><br>
+
+                <strong>Flujo de Trabajo Basado en Modal</strong><br>
+                Los conteos se ingresan mediante un formulario modal dedicado que garantiza precisión y evita entradas inválidas.<br><br>
+
+                <strong>Lógica de Validación</strong><br>
+                Cuando el usuario ingresa un número de parte:<br>
+                • El sistema lo valida contra la Lista de Artículos<br>
+                • Si el número de parte es inválido, el sistema bloquea la entrada y alerta al usuario<br>
+                • Solo se permiten números de parte válidos<br><br>
+
+                Una vez validado, el modal muestra automáticamente:<br>
+                • Unidad de Medida<br>
+                • Descripción<br>
+                • Siguiente Número de Tag asignado al usuario<br><br>
+
+                El usuario luego ingresa:<br>
+                • Cantidad Contada<br>
+                • Ubicación<br><br>
+
+                Después de guardar, la entrada se escribe en la tabla de Conteos Físicos.<br><br>
+
+                <strong>Lógica del Número de Tag (Secuencial y Específica por Usuario)</strong><br>
+                Los números de Tag son esenciales para auditoría. ICS los asigna bajo estas reglas:<br>
+                • Cada usuario recibe su propia secuencia<br>
+                • Los números incluyen las iniciales del usuario<br>
+                • Los números incrementan secuencialmente (ej. JS‑10000, JS‑10001…)<br>
+                • No se permiten duplicados<br><br>
+
+                <em>Los números de Tag ayudan a rastrear quién contó qué y en qué orden.</em><br><br>
+
+                <strong>Permisos y Visibilidad del Usuario</strong><br>
+                El módulo aplica reglas estrictas de visibilidad:<br>
+                • Los usuarios solo pueden ver sus propios conteos — evita sesgos o influencia<br>
+                • Los administradores pueden ver todos los conteos — necesario para conciliación y auditoría<br><br>
+
+                <em>Esta separación garantiza integridad durante el proceso de conteo.</em><br><br>
+
+                <strong>Seguimiento de Discrepancias</strong><br>
+                El sistema compara automáticamente:<br>
+                • Cantidad Contada<br>
+                • Cantidad del Sistema<br><br>
+
+                Si hay diferencia:<br>
+                • La discrepancia se calcula<br>
+                • La fila se resalta<br>
+                • La cantidad del sistema se muestra como referencia<br><br>
+
+                <em>Esto facilita identificar artículos que requieren investigación o reconteo.</em><br><br>
+
+                <strong>Flujo de Conciliación (Controlado y Manual)</strong><br>
+                El módulo NO actualiza automáticamente la tabla de Inventario por Ubicación — intencionalmente.<br><br>
+
+                Antes de actualizar inventario, el equipo de conciliación debe:<br>
+                • Revisar discrepancias<br>
+                • Comparar conteos con valores del sistema<br>
+                • Discutir variaciones con finanzas<br>
+                • Aprobar o rechazar ajustes<br>
+                • Realizar reconteos si es necesario<br><br>
+
+                Solo después de la aprobación se carga el inventario final para reemplazar los datos existentes.<br><br>
+
+                <em>Esto garantiza precisión financiera y evita corrupción accidental del inventario.</em><br><br>
+
+                <strong>Herramientas de Exportación</strong><br>
+                El módulo incluye:<br>
+                • Filtros Rápidos<br>
+                • Filtros Avanzados<br>
+                • Exportar a Excel / CSV<br><br>
+
+                Estas herramientas permiten exportar resultados para reuniones de conciliación, auditorías o revisiones externas.<br><br>
+
+                <strong>Funciones de Interacción del Usuario</strong><br>
+                Como todas las tablas ICS, incluye:<br>
+                • Resaltado de filas<br>
+                • Resaltado de celda activa<br>
+                • Efectos hover<br>
+                • Interacción tipo hoja de cálculo<br><br>
+
+                <strong>Por qué este Módulo es Crítico</strong><br>
+                El módulo de Conteos Físicos garantiza:<br>
+                • Conteos cíclicos precisos<br>
+                • Trazabilidad completa de quién contó qué<br>
+                • Validación estricta de números de parte<br>
+                • Identificación clara de discrepancias<br>
+                • Conciliación adecuada con finanzas<br>
+                • Registro limpio y auditable de toda actividad<br>
+                • Protección contra cambios accidentales en inventario<br><br>
+
+                <em>Es la columna vertebral del proceso de auditoría de ICS y un componente clave para mantener la precisión del inventario y la integridad financiera.</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="physicalCountTable3">盘点表</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                <strong>ICS – 实物盘点模块（摘要）</strong><br><br>
+                实物盘点模块旨在支持精确的循环盘点、完整的库存审计和对账流程。它提供一个受控、验证且完全可追溯的环境，让用户记录盘点数量、与系统数量进行比较，并为库存与财务团队的最终批准做好准备。<br><br>
+
+                <strong>盘点表中记录的数据字段</strong><br>
+                每条盘点记录包含以下字段：<br>
+                • 标签编号（Tag Number）<br>
+                • 物料编号<br>
+                • 描述<br>
+                • 盘点数量<br>
+                • 盘点日期<br>
+                • 盘点时间<br>
+                • 盘点库位<br>
+                • 盘点人<br>
+                • 差异（盘点数量 vs 系统数量）<br>
+                • 系统数量<br>
+                • 备注（可编辑，如“重复”、“忽略”、“损坏”等）<br><br>
+
+                <em>这些字段为每个盘点项目提供完整的审计轨迹。</em><br><br>
+
+                <strong>基于 Modal 的盘点流程</strong><br>
+                盘点通过专用的 modal 表单输入，确保准确性并防止无效数据录入。<br><br>
+
+                <strong>验证逻辑</strong><br>
+                当用户输入物料编号时：<br>
+                • 系统会根据物料清单进行验证<br>
+                • 若无效，系统会阻止录入并提醒用户<br>
+                • 仅允许有效物料编号<br><br>
+
+                验证通过后，modal 会自动显示：<br>
+                • 计量单位<br>
+                • 描述<br>
+                • 分配给该用户的下一个标签编号<br><br>
+
+                用户随后输入：<br>
+                • 盘点数量<br>
+                • 库位<br><br>
+
+                保存后，记录写入盘点表。<br><br>
+
+                <strong>标签编号逻辑（顺序且用户专属）</strong><br>
+                标签编号对审计至关重要。ICS 按以下规则分配：<br>
+                • 每个用户拥有自己的编号序列<br>
+                • 标签编号包含用户姓名缩写<br>
+                • 编号按顺序递增（如 JS‑10000, JS‑10001…）<br>
+                • 不允许重复<br><br>
+
+                <em>标签编号帮助审计人员追踪谁在何时盘点了什么。</em><br><br>
+
+                <strong>用户权限与可见性</strong><br>
+                模块执行严格的可见性规则：<br>
+                • 用户只能看到自己的盘点记录 — 防止偏见或相互影响<br>
+                • 管理员可查看所有记录 — 用于对账与审计<br><br>
+
+                <em>这种分离确保盘点阶段的公正性。</em><br><br>
+
+                <strong>差异跟踪</strong><br>
+                系统自动比较：<br>
+                • 盘点数量<br>
+                • 系统数量<br><br>
+
+                若存在差异：<br>
+                • 自动计算差异<br>
+                • 高亮显示该行<br>
+                • 显示系统数量作为参考<br><br>
+
+                <em>便于快速识别需要调查或复盘的项目。</em><br><br>
+
+                <strong>对账流程（受控且手动）</strong><br>
+                盘点模块不会自动更新“按库位库存”表 — 这是有意设计的。<br><br>
+
+                在更新库存前，对账团队必须：<br>
+                • 审查所有差异<br>
+                • 将盘点与系统数量进行比较<br>
+                • 与财务部门讨论差异<br>
+                • 批准或拒绝调整<br>
+                • 必要时进行复盘<br><br>
+
+                只有在批准后，最终库存才会上传并替换现有数据。<br><br>
+
+                <em>这确保财务准确性并防止库存数据被意外破坏。</em><br><br>
+
+                <strong>导出工具</strong><br>
+                模块包含：<br>
+                • 快速筛选<br>
+                • 高级筛选<br>
+                • 导出至 Excel / CSV<br><br>
+
+                这些工具便于团队导出盘点结果用于对账会议、审计或外部审查。<br><br>
+
+                <strong>用户交互功能</strong><br>
+                与所有 ICS 表格一致，包含：<br>
+                • 行高亮<br>
+                • 活动单元格高亮<br>
+                • 悬停效果<br>
+                • 类电子表格交互方式<br><br>
+
+                <strong>为何此模块至关重要</strong><br>
+                实物盘点模块确保：<br>
+                • 精确的循环盘点<br>
+                • 完整的盘点责任追踪<br>
+                • 严格的物料编号验证<br>
+                • 清晰的差异识别<br>
+                • 与财务部门的正确对账<br>
+                • 干净、可审计的盘点记录<br>
+                • 防止库存被意外修改<br><br>
+
+                <em>它是 ICS 审计流程的核心，也是维持库存准确性与财务完整性的关键组件。</em><br>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+
+        <div class="accordion-item">
+          <button class="accordion-header">Blank</button>
+          <div class="accordion-body">
+            <ul>
+              <li>
+                For New information
+              </li>
+            </ul>
+          </div>
+
         </div>
 
         <!-- Agrega más acordeones aquí -->
@@ -425,6 +3118,125 @@
           <li>Quality‑gate logic before LPN generation</li>
         </ul>
       </article>
+
+
+      <article class="module-card">
+        <div class="module-icon">📈</div>
+        <h3 data-i18n="moduleDashboardTitle">Dashboard & KPIs</h3>
+        <ul>
+          <li data-i18n="moduleDashboardItem1">Real‑time KPIs and trends</li>
+          <li data-i18n="moduleDashboardItem2">10 summary cards with live data</li>
+          <li data-i18n="moduleDashboardItem3">Interactive charts (bar, line, donut)</li>
+          <li data-i18n="moduleDashboardItem4">Operational insights by user and type</li>
+        </ul>
+      </article>
+
+
+      <article class="module-card">
+        <div class="module-icon">📦</div>
+        <h3 data-i18n="moduleOnHandTitle">Inventory On‑Hand</h3>
+        <ul>
+          <li data-i18n="moduleOnHandItem1">Excel‑style interaction</li>
+          <li data-i18n="moduleOnHandItem2">Quick & advanced filters</li>
+          <li data-i18n="moduleOnHandItem3">Hover, row & cell highlighting</li>
+          <li data-i18n="moduleOnHandItem4">Export to Excel / CSV</li>
+        </ul>
+      </article>
+
+      
+      <article class="module-card">
+        <div class="module-icon">📍</div>
+        <h3 data-i18n="moduleInvByLocTitle">Inventory by Location</h3>
+        <ul>
+          <li data-i18n="moduleInvByLocItem1">Real‑time location accuracy</li>
+          <li data-i18n="moduleInvByLocItem2">Integrated Ship / Receive / Sub‑Transfer</li>
+          <li data-i18n="moduleInvByLocItem3">Bulk import & validation</li>
+          <li data-i18n="moduleInvByLocItem4">Excel‑style UI with full traceability</li>
+        </ul>
+      </article>
+
+      <article class="module-card">
+        <div class="module-icon">🗂️</div>
+        <h3 data-i18n="moduleMasterDataTitle">Item & Location Master Data</h3>
+        <ul>
+          <li data-i18n="moduleMasterDataItem1">Strict validation for all operations</li>
+          <li data-i18n="moduleMasterDataItem2">Bulk import of items & locations</li>
+          <li data-i18n="moduleMasterDataItem3">Active / inactive status control</li>
+          <li data-i18n="moduleMasterDataItem4">Excel‑style interaction & export</li>
+        </ul>
+      </article>
+
+
+      <article class="module-card">
+        <div class="module-icon">🧾</div>
+        <h3 data-i18n="modulePOTitle">Purchase Orders</h3>
+        <ul>
+          <li data-i18n="modulePOItem1">Bulk import & template generation</li>
+          <li data-i18n="modulePOItem2">Dynamic status (Ordered / Partial / Completed)</li>
+          <li data-i18n="modulePOItem3">Strict receiving validation</li>
+          <li data-i18n="modulePOItem4">Excel‑style UI with full history</li>
+        </ul>
+      </article>
+
+      
+      <article class="module-card">
+        <div class="module-icon">📨</div>
+        <h3 data-i18n="moduleOrderReqTitle">Order Request Management</h3>
+        <ul>
+          <li data-i18n="moduleOrderReqItem1">Modal‑based order creation</li>
+          <li data-i18n="moduleOrderReqItem2">Dynamic status workflow</li>
+          <li data-i18n="moduleOrderReqItem3">Strict validation & real‑time updates</li>
+          <li data-i18n="moduleOrderReqItem4">Export & full audit trail</li>
+        </ul>
+      </article>
+
+
+      <article class="module-card">
+        <div class="module-icon">🛒</div>
+        <h3 data-i18n="modulePickingOrdersTitle">Picking Orders / Replacement</h3>
+        <ul>
+          <li data-i18n="modulePickingOrdersItem1">Automatic assignment of oldest order</li>
+          <li data-i18n="modulePickingOrdersItem2">FIFO‑based location logic</li>
+          <li data-i18n="modulePickingOrdersItem3">Strict picking validation</li>
+          <li data-i18n="modulePickingOrdersItem4">Full traceability in History</li>
+        </ul>
+      </article>
+
+
+      <article class="module-card">
+        <div class="module-icon">🏷️</div>
+        <h3 data-i18n="moduleIncomingVerificationTitle">Incoming Loads Verification</h3>
+        <ul>
+          <li data-i18n="moduleIncomingVerificationItem1">LPN generation & assignment</li>
+          <li data-i18n="moduleIncomingVerificationItem2">Multi‑size label printing</li>
+          <li data-i18n="moduleIncomingVerificationItem3">Discrepancy detection & color coding</li>
+          <li data-i18n="moduleIncomingVerificationItem4">Real‑time receiving & put‑away tracking</li>
+        </ul>
+      </article>
+
+      <article class="module-card">
+        <div class="module-icon">🧮</div>
+        <h3 data-i18n="modulePhysicalCountTitle">Physical Counts</h3>
+        <ul>
+          <li data-i18n="modulePhysicalCountItem1">Modal‑based counting workflow</li>
+          <li data-i18n="modulePhysicalCountItem2">User‑specific tag number sequences</li>
+          <li data-i18n="modulePhysicalCountItem3">Discrepancy tracking & highlighting</li>
+          <li data-i18n="modulePhysicalCountItem4">Controlled reconciliation process</li>
+        </ul>
+      </article>
+
+      
+      <article class="module-card">
+        <div class="module-icon">📜</div>
+        <h3 data-i18n="moduleHistoryTitle">Inventory History</h3>
+        <ul>
+          <li data-i18n="moduleHistoryItem1">Full audit trail of all movements</li>
+          <li data-i18n="moduleHistoryItem2">Quick & advanced filters</li>
+          <li data-i18n="moduleHistoryItem3">Excel‑style interaction</li>
+          <li data-i18n="moduleHistoryItem4">Export for audits & investigations</li>
+        </ul>
+      </article>
+
 
 
     </div>
