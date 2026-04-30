@@ -617,3 +617,51 @@ body {
   transition: all 0.3s ease;
 }
 
+
+
+.tech-buttons-container {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.tech-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tech-column h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.tech-column button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background: #f8f8f8;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.tech-column button:hover {
+  background: #eaeaea;
+}
+
+/*Hide buttons*/
+.accordion-header {
+  display: none;
+}
+
+.tech-column button.active-accordion-btn {
+  background-color: #007bff;
+  color: white;
+  border-color: #0056b3;
+}
+
+
+
