@@ -626,11 +626,19 @@ body {
   justify-content: center;
 }
 
+
 .tech-column {
-  display: flex;
-  flex-direction: column;
+  display: none;              /* Oculto por defecto */
+  flex-direction: row;        /* 🔥 Botones horizontales */
+  flex-wrap: wrap;            /* 🔥 Permite varias filas si es necesario */
   gap: 8px;
 }
+
+.tech-column.active-lang {
+  display: flex;              /* 🔥 Solo la columna activa se muestra */
+}
+
+
 
 .tech-column h3 {
   margin-bottom: 10px;
@@ -657,11 +665,93 @@ body {
   display: none;
 }
 
+
+/*Color para los botone de tecnical*/
+
 .tech-column button.active-accordion-btn {
   background-color: #007bff;
   color: white;
   border-color: #0056b3;
 }
 
+.tech-buttons-container button {
+  padding: 8px 14px;
+  margin: 4px;
+  border: 1px solid #d0d0d0;
+  background: #f7f7f7;
+  color: #333;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-block; /* tamaño natural */
+  width: auto;           /* evita que se estiren */
+}
+
+/* Hover */
+.tech-buttons-container button:hover {
+  background: #078561;
+  border-color: #0c9854;
+  transform: translateY(-1px);
+}
+
+/* Botón activo */
+.tech-buttons-container button.active-accordion-btn {
+  background: #005fcc;
+  color: white;
+  border-color: #004a9f;
+}
+
+/* Flashing */
+@keyframes pulseActive {
+  20% { box-shadow: 0 0 18px rgb(103, 1, 237); }
+  40% { box-shadow: 0 0 36px rgb(235, 7, 7); }
+  60% { box-shadow: 0 0 180px rgba(32, 216, 22); }
+ 180% { box-shadow: 0 0 8px rgb(0, 58, 250); }
+}
+
+.tech-buttons-container button.active-accordion-btn {
+  animation: pulseActive 1.0s infinite ease-in-out;
+}
 
 
+
+/*Color para los botone de tecnical*/
+
+
+.speak-controls {
+  margin: 8px 0 12px 0;
+}
+
+.speak-btn {
+  background: #005fcc;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  margin-right: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.25s ease;
+}
+
+.speak-btn:hover {
+  background: #004a9f;
+  transform: translateY(-1px);
+}
+
+.speak-btn.pause { background: #ff9800; }
+.speak-btn.pause:hover { background: #e68900; }
+
+.speak-btn.resume { background: #4caf50; }
+.speak-btn.resume:hover { background: #3e8e41; }
+
+.speak-btn.stop { background: #e53935; }
+.speak-btn.stop:hover { background: #c62828; }
+
+
+
+.highlight-reading {
+  background: yellow;
+  transition: background 0.2s ease;
+}
