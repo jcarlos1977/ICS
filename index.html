@@ -105,8 +105,10 @@
     <!-- ======= Technical Details ======= -->
     <section class="section" id="technical-details">
       <div class="section-header">
-        <h2>Technical Details of ICS</h2>
-        <p>Explore the internal tables, validations and logic behind each module.</p>
+        <h2 data-i18n="technicalDetailsTitle">Technical Details of ICS</h2>
+        <p data-i18n="technicalDetailsDescription">
+          Explore the internal tables, validations and logic behind each module.
+        </p>
       </div>
 
       
@@ -114,7 +116,7 @@
       <div class="tech-buttons-container">
 
         <!-- English Column -->
-        <div class="tech-column">
+        <div class="tech-column" data-lang="en">
           <h3>English</h3>
           <button data-target="dashboard1" onclick="openAccordion(this)">Dashboard</button>
           <button data-target="inventoryOnHand1" onclick="openAccordion(this)">Inventory On Hand</button>
@@ -131,9 +133,9 @@
 
 
         <!-- Spanish Column -->
-        <div class="tech-column">
+        <div class="tech-column" data-lang="es">
           <h3>Español</h3>
-          <button data-target="dashboard2" onclick="openAccordion(this)">Dashboard2</button>
+          <button data-target="dashboard2" onclick="openAccordion(this)">Dashboard</button>
           <button data-target="inventoryOnHand2" onclick="openAccordion(this)">Inventario Disponible</button>
           <button data-target="inventoryByLocation2" onclick="openAccordion(this)">Inventario por Ubicación</button>
           <button data-target="itemLocationTable2" onclick="openAccordion(this)">Tabla de Artículos y Ubicaciones</button>
@@ -148,7 +150,7 @@
 
 
         <!-- Chinese Column -->
-        <div class="tech-column">
+        <div class="tech-column" data-lang="zh">
           <h3>中文</h3>
           <button data-target="dashboard3" onclick="openAccordion(this)">仪表板</button>
           <button data-target="inventoryOnHand3" onclick="openAccordion(this)">库存现有量</button>
@@ -172,6 +174,7 @@
 
         <div class="accordion-item">
           <button class="accordion-header" data-target="dashboard1">Dashboard</button>
+          
           <div class="accordion-body">
             <ul>
               <li>
@@ -3109,15 +3112,16 @@
       <!-- Incoming Load Processing -->
       <article class="module-card">
         <div class="module-icon">📦</div>
-        <h3>Dual‑Layer Incoming Load Processing</h3>
+        <h3 data-i18n="moduleIncomingProcessingTitle">Dual‑Layer Incoming Load Processing</h3>
         <ul>
-          <li>Staging layer for raw file intake</li>
-          <li>Strict validation of file name & column sequence</li>
-          <li>Visual error flags for mismatched Part Numbers</li>
-          <li>Shipment integrity enforcement (no duplicates)</li>
-          <li>Quality‑gate logic before LPN generation</li>
+          <li data-i18n="moduleIncomingProcessingItem1">Staging layer for raw file intake</li>
+          <li data-i18n="moduleIncomingProcessingItem2">Strict validation of file name & column sequence</li>
+          <li data-i18n="moduleIncomingProcessingItem3">Visual error flags for mismatched Part Numbers</li>
+          <li data-i18n="moduleIncomingProcessingItem4">Shipment integrity enforcement (no duplicates)</li>
+          <li data-i18n="moduleIncomingProcessingItem5">Quality‑gate logic before LPN generation</li>
         </ul>
       </article>
+
 
 
       <article class="module-card">
