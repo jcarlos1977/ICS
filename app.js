@@ -29,13 +29,17 @@ function applyTranslations(lang) {
 const savedLang = localStorage.getItem("ics_lang") || "en";
 languageSelect.value = savedLang;
 applyTranslations(savedLang);
+updateLanguageColumns(savedLang);
+
 
 // Handle language change
 languageSelect.addEventListener("change", (e) => {
   const lang = e.target.value;
   localStorage.setItem("ics_lang", lang);
   applyTranslations(lang);
+  updateLanguageColumns(lang);
 });
+
 
 // ===============================
 // Smooth scroll for internal links
@@ -195,5 +199,16 @@ function openAccordion(btn) {
 }
 
 
+function updateLanguageColumns(lang) {
+  const columns = document.querySelectorAll(".tech-column");
+
+  columns.forEach(col => {
+    if (col.dataset.lang === lang) {
+      col.style.display = "block";
+    } else {
+      col.style.display = "none";
+    }
+  });
+}
 
 
